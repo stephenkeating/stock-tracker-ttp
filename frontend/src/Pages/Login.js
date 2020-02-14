@@ -7,7 +7,8 @@ const LoginPage = props => {
   const dispatch = useDispatch();
   // Setting up local state using the useState hook
   const [loginForm, setLoginForm] = useState({
-    username: '',
+    name: '',
+    email: '',
     password: ''
   });
 
@@ -38,7 +39,7 @@ const LoginPage = props => {
     setLoginForm({ ...loginForm, [e.target.name]: e.target.value });
 
   // Destructuring keys from our local state to use in the form
-  const { username, password } = loginForm;
+  const { email, password } = loginForm;
 
   // Component code
   return (
@@ -46,10 +47,10 @@ const LoginPage = props => {
       <h1>Login Page</h1>
       <input
         type="text"
-        name="username"
-        value={username}
+        name="email"
+        value={email}
         onChange={handleChange}
-        placeholder="Username"
+        placeholder="Email"
       />
       <input
         type="password"

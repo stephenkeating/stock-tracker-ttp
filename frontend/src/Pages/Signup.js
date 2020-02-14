@@ -8,7 +8,8 @@ const Signup = props => {
 
   // Setting up local state using the useState hook
   const [signupForm, setSignupForm] = useState({
-    username: '',
+    name: '',
+    email: '',
     password: ''
   });
 
@@ -24,7 +25,7 @@ const Signup = props => {
   };
 
   // Destructuring keys from our local state to use in the form
-  const { username, password } = signupForm;
+  const { name, email, password } = signupForm;
 
   // Component code
   return (
@@ -32,10 +33,17 @@ const Signup = props => {
       <h1>Signup Page</h1>
       <input
         type="text"
-        name="username"
-        value={username}
+        name="name"
+        value={name}
         onChange={handleChange}
-        placeholder="Username"
+        placeholder="Name"
+      />
+      <input
+        type="text"
+        name="email"
+        value={email}
+        onChange={handleChange}
+        placeholder="Email"
       />
       <input
         type="password"

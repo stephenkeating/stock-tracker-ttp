@@ -10,12 +10,12 @@ const Nav = () => {
     dispatch(userActions.logoutUser());
   };
 
-  const username = useSelector(state => state.user.username);
+  const name = useSelector(state => state.user.name);
   
   return (
     <nav style={{ display: 'flex', justifyContent: 'space-evenly' }}>
       <Link to="/">Home</Link>
-      { username  
+      { name  
         ? null
         : <> 
           <Link to="/signup">Signup</Link>
