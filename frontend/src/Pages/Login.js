@@ -15,8 +15,23 @@ const LoginPage = props => {
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(userActions.loginUserToDB(loginForm));
-    props.history.push('/');
   };
+
+  // The following could be used for error handling:
+  // const handleSubmit = e => {
+  //   e.preventDefault();
+  //   userActions.loginUserToDB(loginForm)
+  //   .then(data => {
+  //     if(data.errors) {
+  //         let errors = data.erros
+  //         alert("Unable to login")
+  //     } else {
+  //       dispatch(userActions.setUserAction(data.user));
+  //       localStorage.setItem('token', data.token);
+  //       props.history.push('/');
+  //     }
+  //   })
+  // };
 
   const handleChange = e =>
     setLoginForm({ ...loginForm, [e.target.name]: e.target.value });
