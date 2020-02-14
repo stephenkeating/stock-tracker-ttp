@@ -7,7 +7,6 @@ const LoginPage = props => {
   const dispatch = useDispatch();
   // Setting up local state using the useState hook
   const [loginForm, setLoginForm] = useState({
-    name: '',
     email: '',
     password: ''
   });

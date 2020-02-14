@@ -18,7 +18,7 @@ const Nav = () => {
       { name  
         ? <> 
             <Link to="/transactions">Transactions</Link>
-            {/* <Link to="/login">Login</Link> */}
+            {/* <Link to="/portfolio">Portfolio</Link> */}
           </>
         : <> 
             <Link to="/signup">Signup</Link>

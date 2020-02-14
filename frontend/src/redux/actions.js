@@ -7,8 +7,10 @@ const LOGIN_URL = BASE_URL + '/login';
 const SPECIFIC_USER_URL = id => USERS_URL + '/' + id;
 // const TRANSACTIONS_URL = BASE_URL + '/transactions';
 
-// const IEX_API_URL = 'https://sandbox.iexapis.com/stable/'
-// const IEX_SANDBOX_SECRET_TOKEN = process.env.REACT_APP_IEX_SANDBOX_SECRET_TOKEN
+const IEX_SANDBOX_API_URL = 'https://sandbox.iexapis.com/stable/'
+const IEX_SANDBOX_SECRET_TOKEN = process.env.REACT_APP_IEX_SANDBOX_SECRET_TOKEN
+const GET_QUOTE_URL = ticker => IEX_SANDBOX_API_URL + 'stock/' + ticker + '/quote?token=' + IEX_SANDBOX_SECRET_TOKEN
+
 // const IEX_TOKEN = process.env.REACT_APP_IEX_API_TOKEN
 
 // Redux Actions
@@ -124,6 +126,16 @@ const logoutUser = () => dispatch => {
   localStorage.clear();
 };
 
+const getQuote = data => {
+  const config = {
+    method: 'GET',
+  };
+  // console.log(data);
+  return fetch(GET_QUOTE_URL(data.ticker))
+    .then(r => r.json())
+    .catch(error => error)
+};
+
 export default {
   newUserToDB,
   deleteUserFromDB,
@@ -131,5 +143,6 @@ export default {
   persistUser,
   logoutUser,
   setUserAction,
-  setTransactionsAction
+  setTransactionsAction,
+  getQuote
 };
