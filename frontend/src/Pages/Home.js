@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 const Home = () => {
-  const username = useSelector(state => state.username);
+  const username = useSelector(state => state.user.username);
   const text = username ? (
     <h1>{username} is currently logged in</h1>
   ) : (

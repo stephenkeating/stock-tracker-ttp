@@ -1,9 +1,17 @@
-export default (state = {}, { type, payload }) => {
+// reducer takes two arguments, state and action
+// inside the function is a switch case. default returns state. 
+// return value of the reducer beccomes the new Redux state
+
+const initialState = {
+  user: {}
+}
+
+export default (state = initialState, { type, payload }) => {
   switch (type) {
     case 'SET_USER':
-      return payload;
+      return {...state, user: payload}
     case 'CLEAR_USER':
-      return {};
+      return {...state, user: {}};
     default:
       return state;
   }

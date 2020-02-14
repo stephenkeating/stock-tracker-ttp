@@ -136,3 +136,1362 @@ Processing by Rails::InfoController#routes as HTML
 Completed 200 OK in 23ms (Views: 19.1ms | ActiveRecord: 0.0ms | Allocations: 6939)
 
 
+Started GET "/" for ::1 at 2020-02-13 13:48:51 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/stephenkeating/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/stephenkeating/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.1ms | Allocations: 316)
+Completed 200 OK in 17ms (Views: 13.1ms | ActiveRecord: 0.0ms | Allocations: 1603)
+
+
+Started GET "/users" for ::1 at 2020-02-13 13:48:54 -0500
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
+  
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/1" for ::1 at 2020-02-13 13:48:58 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 28ms (Views: 1.4ms | ActiveRecord: 11.2ms | Allocations: 6580)
+
+
+Started POST "/login" for ::1 at 2020-02-13 13:55:12 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"user", "password"=>"[FILTERED]", "auth"=>{"username"=>"user", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "user"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.7ms | Allocations: 1311)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/controllers/auth_controller.rb:13:in `login'
+Started GET "/users/" for ::1 at 2020-02-13 13:56:06 -0500
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
+  
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/users" for ::1 at 2020-02-13 14:01:03 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "user"=>{"username"=>"stephen"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "stephen"], ["password_digest", "$2a$12$VEEto3PnLmwD/kuVVrMe2.cwXEZdsVrBvRbOJunqnMr66Rrenw0PK"], ["created_at", "2020-02-13 19:01:03.778607"], ["updated_at", "2020-02-13 19:01:03.778607"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "stephen"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Completed 200 OK in 266ms (Views: 0.5ms | ActiveRecord: 9.6ms | Allocations: 9266)
+
+
+Started POST "/login" for ::1 at 2020-02-13 14:01:12 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 264ms (Views: 0.4ms | ActiveRecord: 2.7ms | Allocations: 1216)
+
+
+Started POST "/login" for ::1 at 2020-02-13 14:01:18 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 261ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 798)
+
+
+Started POST "/login" for ::1 at 2020-02-13 14:01:48 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 261ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 1004)
+
+
+Started GET "/users/" for ::1 at 2020-02-13 14:01:59 -0500
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
+  
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/2" for ::1 at 2020-02-13 14:02:01 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 1.0ms | Allocations: 878)
+
+
+Started GET "/users/2" for ::1 at 2020-02-13 14:06:47 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.7ms | Allocations: 717)
+
+
+Started POST "/login" for ::1 at 2020-02-13 15:08:25 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 277ms (Views: 0.7ms | ActiveRecord: 8.7ms | Allocations: 6768)
+
+
+Started POST "/login" for ::1 at 2020-02-13 15:08:50 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 260ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 1004)
+
+
+Started POST "/login" for ::1 at 2020-02-13 15:27:55 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 255ms (Views: 0.5ms | ActiveRecord: 1.1ms | Allocations: 1102)
+
+
+Started GET "/persist" for ::1 at 2020-02-13 15:33:22 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/persist"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/persist" for ::1 at 2020-02-13 15:34:31 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/persist"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/login" for ::1 at 2020-02-13 15:34:41 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 283ms (Views: 0.4ms | ActiveRecord: 7.2ms | Allocations: 987)
+
+
+Started GET "/persist" for ::1 at 2020-02-13 15:34:44 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/persist"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/persist" for ::1 at 2020-02-13 15:35:07 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/persist"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/persist" for ::1 at 2020-02-13 15:35:10 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/persist"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/rails/info/routes" for ::1 at 2020-02-13 15:36:24 -0500
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/stephenkeating/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/stephenkeating/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [25 times] (Duration: 13.9ms | Allocations: 3629)
+  Rendered /Users/stephenkeating/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 5.5ms | Allocations: 932)
+  Rendered /Users/stephenkeating/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 25.7ms | Allocations: 6503)
+Completed 200 OK in 46ms (Views: 40.0ms | ActiveRecord: 0.0ms | Allocations: 8390)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 15:40:18 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 16ms (Views: 0.8ms | ActiveRecord: 0.8ms | Allocations: 1042)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 15:40:21 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 828)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 15:40:48 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.8ms | Allocations: 812)
+
+
+Started POST "/login" for ::1 at 2020-02-13 15:40:58 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 254ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 992)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 15:48:25 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 915)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 15:53:09 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.9ms | Allocations: 812)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 15:53:23 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.6ms | Allocations: 812)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 15:54:07 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.8ms | Allocations: 812)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 15:54:12 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 812)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 15:56:40 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.7ms | Allocations: 812)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 15:56:47 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.7ms | Allocations: 812)
+
+
+Started POST "/login" for ::1 at 2020-02-13 15:56:57 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 264ms (Views: 0.4ms | ActiveRecord: 3.5ms | Allocations: 993)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 15:57:00 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 812)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 15:59:22 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 812)
+
+
+Started POST "/login" for ::1 at 2020-02-13 15:59:28 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 257ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 988)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 15:59:33 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 812)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 15:59:54 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 812)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 16:01:46 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 1.0ms | Allocations: 812)
+
+
+Started POST "/login" for ::1 at 2020-02-13 16:01:52 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 259ms (Views: 0.4ms | ActiveRecord: 1.0ms | Allocations: 988)
+
+
+Started POST "/login" for ::1 at 2020-02-13 16:02:16 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 256ms (Views: 0.4ms | ActiveRecord: 1.9ms | Allocations: 988)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 16:04:54 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 812)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 16:05:16 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 0.8ms | Allocations: 812)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 16:05:19 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 1.3ms | Allocations: 812)
+
+
+Started POST "/login" for ::1 at 2020-02-13 16:05:24 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 266ms (Views: 0.4ms | ActiveRecord: 2.1ms | Allocations: 988)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 16:06:33 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.7ms | Allocations: 812)
+
+
+Started POST "/login" for ::1 at 2020-02-13 16:06:58 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 258ms (Views: 0.4ms | ActiveRecord: 1.8ms | Allocations: 989)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 16:10:10 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 33ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 815)
+
+
+Started POST "/login" for ::1 at 2020-02-13 16:11:51 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 261ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 783)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 16:12:03 -0500
+Processing by AuthController#persist as */*
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 112)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/auth_controller.rb:20:in `persist'
+Started GET "/auth" for ::1 at 2020-02-13 16:13:51 -0500
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthController#persist as */*
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 157)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/auth_controller.rb:20:in `persist'
+Started GET "/auth" for ::1 at 2020-02-13 16:17:04 -0500
+Processing by AuthController#persist as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 109)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/auth_controller.rb:20:in `persist'
+Started POST "/login" for ::1 at 2020-02-13 16:17:11 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 289ms (Views: 0.5ms | ActiveRecord: 11.3ms | Allocations: 8358)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 16:19:49 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.7ms | Allocations: 943)
+
+
+Started POST "/login" for ::1 at 2020-02-13 16:19:55 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 289ms (Views: 0.3ms | ActiveRecord: 6.0ms | Allocations: 989)
+
+
+Started POST "/login" for ::1 at 2020-02-13 16:20:16 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 266ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 1002)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 16:20:19 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 812)
+
+
+Started POST "/login" for ::1 at 2020-02-13 16:20:25 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 255ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1004)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 16:20:53 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 1.1ms | Allocations: 812)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 16:21:12 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.6ms | Allocations: 812)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 16:21:17 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 1.0ms | Allocations: 812)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 16:21:35 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 812)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 16:25:34 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.8ms | Allocations: 812)
+
+
+Started POST "/login" for ::1 at 2020-02-13 16:25:42 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (7.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 479ms (Views: 0.3ms | ActiveRecord: 7.3ms | Allocations: 989)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 16:31:26 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 9ms (Views: 0.8ms | ActiveRecord: 3.6ms | Allocations: 915)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 16:31:35 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 1.1ms | Allocations: 812)
+
+
+Started POST "/login" for ::1 at 2020-02-13 16:31:39 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (8.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 466ms (Views: 0.4ms | ActiveRecord: 8.3ms | Allocations: 994)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 16:35:26 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 812)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 16:35:29 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.6ms | Allocations: 812)
+
+
+Started POST "/login" for ::1 at 2020-02-13 16:35:38 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 248ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 783)
+
+
+Started POST "/login" for ::1 at 2020-02-13 16:35:42 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 247ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 988)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 16:38:48 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.6ms | Allocations: 812)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 16:38:51 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 1.0ms | Allocations: 812)
+
+
+Started POST "/login" for ::1 at 2020-02-13 16:39:00 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 247ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 988)
+
+
+Started POST "/login" for ::1 at 2020-02-13 16:39:00 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 345ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 990)
+
+
+Started POST "/login" for ::1 at 2020-02-13 16:39:53 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 501ms (Views: 0.4ms | ActiveRecord: 1.9ms | Allocations: 989)
+
+
+Started POST "/login" for ::1 at 2020-02-13 16:40:31 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 451ms (Views: 0.4ms | ActiveRecord: 2.3ms | Allocations: 988)
+
+
+Started POST "/login" for ::1 at 2020-02-13 16:40:49 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 433ms (Views: 0.4ms | ActiveRecord: 4.3ms | Allocations: 988)
+
+
+Started POST "/login" for ::1 at 2020-02-13 16:41:42 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 268ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 988)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 16:48:29 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 2.3ms | Allocations: 914)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 16:48:39 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 1.2ms | Allocations: 812)
+
+
+Started POST "/users" for ::1 at 2020-02-13 17:17:30 -0500
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"stephen1", "password"=>"[FILTERED]", "user"=>{"username"=>"stephen1"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (3.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen1"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "stephen1"], ["password_digest", "$2a$12$.4IWATw92uA2wEbD02cnSecIeM/j3N1J6J/sJd9YIx.qWRLlkfU/S"], ["created_at", "2020-02-13 22:17:30.401487"], ["updated_at", "2020-02-13 22:17:30.401487"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "stephen1"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Completed 200 OK in 259ms (Views: 0.3ms | ActiveRecord: 5.5ms | Allocations: 4752)
+
+
+Started POST "/login" for ::1 at 2020-02-13 17:17:43 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 261ms (Views: 0.2ms | ActiveRecord: 3.0ms | Allocations: 867)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 17:20:35 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 1.7ms | Allocations: 815)
+
+
+Started POST "/login" for ::1 at 2020-02-13 17:20:47 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 448ms (Views: 0.3ms | ActiveRecord: 5.4ms | Allocations: 988)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 17:22:05 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 812)
+
+
+Started POST "/login" for ::1 at 2020-02-13 17:22:09 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 262ms (Views: 0.4ms | ActiveRecord: 1.2ms | Allocations: 988)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 17:22:18 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 812)
+
+
+Started POST "/login" for ::1 at 2020-02-13 17:22:24 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 261ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 781)
+
+
+Started POST "/login" for ::1 at 2020-02-13 17:24:52 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (8.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 455ms (Views: 0.2ms | ActiveRecord: 8.7ms | Allocations: 781)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 17:26:20 -0500
+Processing by AuthController#persist as */*
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 107)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/auth_controller.rb:20:in `persist'
+Started GET "/auth" for ::1 at 2020-02-13 17:26:23 -0500
+Processing by AuthController#persist as */*
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 107)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/auth_controller.rb:20:in `persist'
+Started GET "/auth" for ::1 at 2020-02-13 17:29:23 -0500
+Processing by AuthController#persist as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 107)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/auth_controller.rb:20:in `persist'
+Started GET "/auth" for ::1 at 2020-02-13 17:29:35 -0500
+Processing by AuthController#persist as */*
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 107)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/auth_controller.rb:20:in `persist'
+Started POST "/login" for ::1 at 2020-02-13 17:29:38 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 246ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 780)
+
+
+Started POST "/login" for ::1 at 2020-02-13 17:29:42 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 246ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 988)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 17:32:36 -0500
+Processing by AuthController#persist as */*
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 107)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/auth_controller.rb:20:in `persist'
+Started GET "/auth" for ::1 at 2020-02-13 17:32:41 -0500
+Processing by AuthController#persist as */*
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 107)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/auth_controller.rb:20:in `persist'
+Started POST "/login" for ::1 at 2020-02-13 17:32:52 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 250ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 780)
+
+
+Started POST "/login" for ::1 at 2020-02-13 17:32:55 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 259ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 783)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 17:33:13 -0500
+Processing by AuthController#persist as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 107)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/auth_controller.rb:20:in `persist'
+Started POST "/login" for ::1 at 2020-02-13 17:33:17 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 268ms (Views: 0.2ms | ActiveRecord: 2.2ms | Allocations: 780)
+
+
+Started POST "/login" for ::1 at 2020-02-13 17:33:21 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 264ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 992)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 20:15:50 -0500
+Processing by AuthController#persist as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 107)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/auth_controller.rb:20:in `persist'
+Started POST "/login" for ::1 at 2020-02-13 20:15:54 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 252ms (Views: 0.4ms | ActiveRecord: 1.2ms | Allocations: 1093)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 20:19:58 -0500
+Processing by AuthController#persist as */*
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 107)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/auth_controller.rb:20:in `persist'
+Started GET "/auth" for ::1 at 2020-02-13 20:20:30 -0500
+Processing by AuthController#persist as */*
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 107)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/auth_controller.rb:20:in `persist'
+Started GET "/auth" for ::1 at 2020-02-13 20:20:46 -0500
+Processing by AuthController#persist as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 107)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/auth_controller.rb:20:in `persist'
+Started POST "/login" for ::1 at 2020-02-13 20:20:52 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 249ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 780)
+
+
+Started POST "/login" for ::1 at 2020-02-13 20:21:11 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 247ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 782)
+
+
+Started POST "/login" for ::1 at 2020-02-13 20:21:14 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 248ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 988)
+
+
+Started POST "/login" for ::1 at 2020-02-13 20:23:59 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 250ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 781)
+
+
+Started POST "/login" for ::1 at 2020-02-13 20:24:01 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 249ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 988)
+
+
+Started POST "/login" for ::1 at 2020-02-13 20:30:23 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 257ms (Views: 0.4ms | ActiveRecord: 1.3ms | Allocations: 1091)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 20:35:31 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 1.5ms | Allocations: 815)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 20:40:11 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.9ms | Allocations: 812)
+
+
+Started POST "/login" for ::1 at 2020-02-13 20:42:05 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 270ms (Views: 0.4ms | ActiveRecord: 5.0ms | Allocations: 988)
+
+
+Started POST "/login" for ::1 at 2020-02-13 20:42:24 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 266ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 782)
+
+
+Started POST "/login" for ::1 at 2020-02-13 20:42:38 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 292ms (Views: 0.4ms | ActiveRecord: 6.6ms | Allocations: 988)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 20:42:53 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.8ms | Allocations: 812)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 20:47:48 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 16ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 815)
+
+
+Started POST "/login" for ::1 at 2020-02-13 20:47:58 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 261ms (Views: 0.1ms | ActiveRecord: 1.3ms | Allocations: 781)
+
+
+Started POST "/login" for ::1 at 2020-02-13 20:48:10 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 257ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 988)
+
+
+Started POST "/login" for ::1 at 2020-02-13 20:48:15 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 260ms (Views: 0.4ms | ActiveRecord: 4.4ms | Allocations: 988)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 20:48:40 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 1.9ms | Allocations: 812)
+
+
+Started POST "/login" for ::1 at 2020-02-13 20:48:46 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 256ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 989)
+
+
+Started POST "/login" for ::1 at 2020-02-13 20:48:52 -0500
+Processing by AuthController#login as */*
+  Parameters: {"username"=>"stephen", "password"=>"[FILTERED]", "auth"=>{"username"=>"stephen", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "stephen"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 252ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 988)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 20:49:16 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.7ms | Allocations: 812)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 20:49:22 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 812)
+
+
+Started GET "/auth" for ::1 at 2020-02-13 20:49:50 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 812)
+
+
