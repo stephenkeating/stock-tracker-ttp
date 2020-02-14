@@ -15,6 +15,7 @@ const LoginPage = props => {
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(userActions.loginUserToDB(loginForm));
+    props.history.push('/');
   };
 
   // The following could be used for error handling:
@@ -23,7 +24,7 @@ const LoginPage = props => {
   //   userActions.loginUserToDB(loginForm)
   //   .then(data => {
   //     if(data.errors) {
-  //         let errors = data.erros
+  //         console.log(data.errors)
   //         alert("Unable to login")
   //     } else {
   //       dispatch(userActions.setUserAction(data.user));
