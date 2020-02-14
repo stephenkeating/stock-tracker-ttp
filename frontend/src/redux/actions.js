@@ -5,6 +5,10 @@ const USERS_URL = BASE_URL + '/users';
 const PERSIST_URL = BASE_URL + '/auth';
 const LOGIN_URL = BASE_URL + '/login';
 const SPECIFIC_USER_URL = id => USERS_URL + '/' + id;
+const TRANSACTIONS_URL = BASE_URL + '/transactions';
+
+const IEX_API_URL = 'https://cloud.iexapis.com/stable/'
+const IEX_TOKEN = process.env.REACT_APP_IEX_API_TOKEN
 
 // Redux Actions
 
