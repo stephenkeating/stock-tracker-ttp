@@ -16,10 +16,13 @@ const Nav = () => {
     <nav style={{ display: 'flex', justifyContent: 'space-evenly' }}>
       <Link to="/">Home</Link>
       { name  
-        ? null
+        ? <> 
+            <Link to="/transactions">Transactions</Link>
+            {/* <Link to="/login">Login</Link> */}
+          </>
         : <> 
-          <Link to="/signup">Signup</Link>
-          <Link to="/login">Login</Link>
+            <Link to="/signup">Signup</Link>
+            <Link to="/login">Login</Link>
           </>
       }
       <Link to="/" onClick={handleLogout}>

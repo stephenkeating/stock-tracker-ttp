@@ -10,6 +10,7 @@ import Nav from './Components/Nav';
 
 import userActions from "./redux/actions"
 import {useDispatch} from "react-redux"
+import './App.css';
 
 const App = () => {
 

@@ -17,12 +17,29 @@ const Signup = props => {
   const handleChange = e =>
     setSignupForm({ ...signupForm, [e.target.name]: e.target.value });
 
+  // Pattern without error handling:
+  // const handleSubmit = e => {
+  //   e.preventDefault();
+  //   const { history } = props;
+  //   dispatch(userActions.newUserToDB(signupForm));
+  //   history.push('/');
+  // };
+
+  // Pattern with error handling:
   const handleSubmit = e => {
     e.preventDefault();
     const { history } = props;
-    dispatch(userActions.newUserToDB(signupForm));
-    history.push('/');
-  };
+    userActions.newUserToDB(signupForm)
+    .then(data => {
+        if(data.errors) {
+          alert(data.errors);
+          return;
+        } else {
+        dispatch(userActions.setUserAction(data.user));
+        localStorage.setItem('token', data.token);
+        history.push('/');
+    }
+    })};
 
   // Destructuring keys from our local state to use in the form
   const { name, email, password } = signupForm;

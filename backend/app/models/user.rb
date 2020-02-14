@@ -9,4 +9,9 @@ class User < ApplicationRecord
   validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 
   has_many :transactions, dependent: :delete_all
+
+  def stock_withdraw(amount)
+    self.balance -= amount
+    self.save
+  end
 end

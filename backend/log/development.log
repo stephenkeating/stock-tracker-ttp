@@ -1864,3 +1864,518 @@ Processing by AuthController#persist as */*
 Completed 200 OK in 9ms (Views: 2.2ms | ActiveRecord: 2.0ms | Allocations: 922)
 
 
+Started GET "/auth" for ::1 at 2020-02-14 09:31:26 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 8ms (Views: 0.8ms | ActiveRecord: 2.7ms | Allocations: 922)
+
+
+Started POST "/login" for ::1 at 2020-02-14 09:37:58 -0500
+Processing by AuthController#login as */*
+  Parameters: {"name"=>"", "email"=>"test@test.com", "password"=>"[FILTERED]", "auth"=>{"name"=>"", "email"=>"test@test.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 259ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 1236)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 09:38:59 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 1.1ms | Allocations: 822)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 09:40:11 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 819)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 09:42:01 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.5ms | Allocations: 819)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 09:42:59 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 819)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 09:43:11 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 0.8ms | Allocations: 820)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 09:43:26 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 819)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 09:44:32 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 819)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 09:48:19 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 819)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 09:48:42 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:22:in `persist'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 819)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-02-14 09:58:05 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/login" for ::1 at 2020-02-14 10:00:14 -0500
+Processing by AuthController#login as */*
+  Parameters: {"name"=>"", "email"=>"test@test.com", "password"=>"[FILTERED]", "auth"=>{"name"=>"", "email"=>"test@test.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 600ms (Views: 0.7ms | ActiveRecord: 2.4ms | Allocations: 1155)
+
+
+Started POST "/login" for ::1 at 2020-02-14 10:00:20 -0500
+Processing by AuthController#login as */*
+  Parameters: {"name"=>"", "email"=>"test@test.com", "password"=>"[FILTERED]", "auth"=>{"name"=>"", "email"=>"test@test.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 667ms (Views: 0.3ms | ActiveRecord: 2.0ms | Allocations: 806)
+
+
+Started POST "/login" for ::1 at 2020-02-14 10:09:00 -0500
+Processing by AuthController#login as */*
+  Parameters: {"name"=>"", "email"=>"test@test.com", "password"=>"[FILTERED]", "auth"=>{"name"=>"", "email"=>"test@test.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 738ms (Views: 0.5ms | ActiveRecord: 1.6ms | Allocations: 1121)
+
+
+Started POST "/login" for ::1 at 2020-02-14 10:10:45 -0500
+Processing by AuthController#login as */*
+  Parameters: {"name"=>"", "email"=>"as", "password"=>"[FILTERED]", "auth"=>{"name"=>"", "email"=>"as", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "as"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.5ms | Allocations: 1080)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/controllers/auth_controller.rb:13:in `login'
+Started POST "/login" for ::1 at 2020-02-14 10:12:07 -0500
+Processing by AuthController#login as */*
+  Parameters: {"name"=>"", "email"=>"test@test.com", "password"=>"[FILTERED]", "auth"=>{"name"=>"", "email"=>"test@test.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 385ms (Views: 0.7ms | ActiveRecord: 0.9ms | Allocations: 1015)
+
+
+Started POST "/login" for ::1 at 2020-02-14 10:12:18 -0500
+Processing by AuthController#login as */*
+  Parameters: {"name"=>"", "email"=>"123", "password"=>"[FILTERED]", "auth"=>{"name"=>"", "email"=>"123", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "123"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.8ms | Allocations: 1068)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/controllers/auth_controller.rb:13:in `login'
+Started POST "/login" for ::1 at 2020-02-14 10:13:41 -0500
+Processing by AuthController#login as */*
+  Parameters: {"name"=>"", "email"=>"123", "password"=>"[FILTERED]", "auth"=>{"name"=>"", "email"=>"123", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "123"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.5ms | Allocations: 1067)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/controllers/auth_controller.rb:13:in `login'
+Started POST "/login" for ::1 at 2020-02-14 10:14:00 -0500
+Processing by AuthController#login as */*
+  Parameters: {"name"=>"", "email"=>"123", "password"=>"[FILTERED]", "auth"=>{"name"=>"", "email"=>"123", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "123"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.7ms | Allocations: 1066)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/controllers/auth_controller.rb:13:in `login'
+Started POST "/login" for ::1 at 2020-02-14 10:14:49 -0500
+Processing by AuthController#login as */*
+  Parameters: {"name"=>"", "email"=>"123", "password"=>"[FILTERED]", "auth"=>{"name"=>"", "email"=>"123", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "123"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms | Allocations: 1066)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/controllers/auth_controller.rb:13:in `login'
+Started POST "/login" for ::1 at 2020-02-14 10:15:15 -0500
+Processing by AuthController#login as */*
+  Parameters: {"name"=>"", "email"=>"123", "password"=>"[FILTERED]", "auth"=>{"name"=>"", "email"=>"123", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "123"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 2.3ms | Allocations: 1067)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/controllers/auth_controller.rb:13:in `login'
+Started POST "/login" for ::1 at 2020-02-14 10:16:55 -0500
+Processing by AuthController#login as */*
+  Parameters: {"name"=>"", "email"=>"123", "password"=>"[FILTERED]", "auth"=>{"name"=>"", "email"=>"123", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "123"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 10.5ms | Allocations: 2422)
+
+
+Started POST "/login" for ::1 at 2020-02-14 10:35:52 -0500
+Processing by AuthController#login as */*
+  Parameters: {"name"=>"", "email"=>"123", "password"=>"[FILTERED]", "auth"=>{"name"=>"", "email"=>"123", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "123"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 788)
+
+
+Started POST "/login" for ::1 at 2020-02-14 10:36:08 -0500
+Processing by AuthController#login as */*
+  Parameters: {"name"=>"", "email"=>"test@test.com", "password"=>"[FILTERED]", "auth"=>{"name"=>"", "email"=>"test@test.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 278ms (Views: 0.6ms | ActiveRecord: 15.0ms | Allocations: 4896)
+
+
+Started POST "/users" for ::1 at 2020-02-14 10:37:32 -0500
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"stephen", "email"=>"test1@test.com", "password"=>"[FILTERED]", "user"=>{"name"=>"stephen", "email"=>"test1@test.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test1@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "stephen"], ["email", "test1@test.com"], ["password_digest", "$2a$12$2g2xHnBaVNxzrp/MxXgUVefInaJKR7EPBecIYMSR9fGJn0.n5F7XK"], ["created_at", "2020-02-14 15:37:32.608167"], ["updated_at", "2020-02-14 15:37:32.608167"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test1@test.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Completed 200 OK in 264ms (Views: 0.7ms | ActiveRecord: 4.0ms | Allocations: 4931)
+
+
+Started POST "/users" for ::1 at 2020-02-14 10:37:45 -0500
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Stephen Keating", "email"=>"asdf", "password"=>"[FILTERED]", "user"=>{"name"=>"Stephen Keating", "email"=>"asdf"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Completed 200 OK in 277ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 5329)
+
+
+Started POST "/users" for ::1 at 2020-02-14 10:43:11 -0500
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"test", "email"=>"test", "password"=>"[FILTERED]", "user"=>{"name"=>"test", "email"=>"test"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Completed 200 OK in 256ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 4187)
+
+
+Started POST "/users" for ::1 at 2020-02-14 10:43:24 -0500
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"test", "email"=>"", "password"=>"[FILTERED]", "user"=>{"name"=>"test", "email"=>""}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Completed 200 OK in 252ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 4190)
+
+
+Started POST "/users" for ::1 at 2020-02-14 10:43:32 -0500
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"test", "email"=>"test2@test.com", "password"=>"[FILTERED]", "user"=>{"name"=>"test", "email"=>"test2@test.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test2@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "test"], ["email", "test2@test.com"], ["password_digest", "$2a$12$aX2AquHqv0PKLJ.9yHF5luOj1oz.9AEe8ZGIy1OfMPVH.FKP9GxyG"], ["created_at", "2020-02-14 15:43:33.081999"], ["updated_at", "2020-02-14 15:43:33.081999"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test2@test.com"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Completed 200 OK in 263ms (Views: 0.3ms | ActiveRecord: 2.1ms | Allocations: 4464)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 10:49:21 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 1.0ms | Allocations: 926)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 10:50:59 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.6ms | Allocations: 819)
+
+
+Started GET "/users/" for ::1 at 2020-02-14 10:56:13 -0500
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
+  
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTransaction Create (3.4ms)[0m  [1m[32mINSERT INTO "transactions" ("price", "quantity", "ticker", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["price", "10.0"], ["quantity", 1], ["ticker", "AAPL"], ["user_id", 5], ["created_at", "2020-02-14 16:19:16.269842"], ["updated_at", "2020-02-14 16:19:16.269842"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 11]]
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" ORDER BY "transactions"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" ORDER BY "transactions"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTransaction Load (0.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" ORDER BY "transactions"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.8ms)[0m  [1m[32mINSERT INTO "transactions" ("price", "quantity", "ticker", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["price", "10.0"], ["quantity", 2], ["ticker", "AAPL"], ["user_id", 5], ["created_at", "2020-02-14 16:22:48.536147"], ["updated_at", "2020-02-14 16:22:48.536147"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTransaction Load (0.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" ORDER BY "transactions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" ORDER BY "transactions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 LIMIT $2[0m  [["user_id", 7], ["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test3@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test3@test.com"], ["password_digest", "$2a$12$9Bauooyl8uW6743doHVdYeF1HaNWLGrQxJdi6f2xsw9hw8y42O2gW"], ["created_at", "2020-02-14 16:34:02.156387"], ["updated_at", "2020-02-14 16:34:02.156387"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/auth" for ::1 at 2020-02-14 11:34:35 -0500
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+Completed 200 OK in 56ms (Views: 20.3ms | ActiveRecord: 8.0ms | Allocations: 7455)
+
+
+Started POST "/login" for ::1 at 2020-02-14 11:34:56 -0500
+Processing by AuthController#login as */*
+  Parameters: {"name"=>"", "email"=>"test@test.com", "password"=>"[FILTERED]", "auth"=>{"name"=>"", "email"=>"test@test.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+Completed 200 OK in 255ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1155)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTransaction Load (0.9ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 LIMIT $2[0m  [["user_id", 8], ["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 11]]
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mTransaction Load (0.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 11]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 ORDER BY "transactions"."id" ASC LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 ORDER BY "transactions"."id" ASC LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 ORDER BY "transactions"."id" ASC LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 ORDER BY "transactions"."id" ASC LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+Started GET "/auth" for ::1 at 2020-02-14 11:47:30 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+Completed 200 OK in 89ms (Views: 0.7ms | ActiveRecord: 37.0ms | Allocations: 7452)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 11:47:31 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 1.2ms | Allocations: 836)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 11:48:49 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.8ms | Allocations: 836)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 11:49:29 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 839)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 11:51:44 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 819)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 11:51:59 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 819)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 11:52:11 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 819)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 11:52:21 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 819)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 11:52:32 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 836)
+
+

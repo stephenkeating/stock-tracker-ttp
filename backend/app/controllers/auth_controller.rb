@@ -10,7 +10,8 @@ class AuthController < ApplicationController
            token = JWT.encode({user_id: user.id}, secret, 'HS256')
           render json: {user: user, token: token}
       else
-          render json: {errors: user.errors.full_messages}
+        #   render json: {errors: user.errors.full_messages}
+          render json: {errors: "Could Not Login"}
       end
   end
 

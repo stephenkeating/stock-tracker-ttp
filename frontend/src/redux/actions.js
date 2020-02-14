@@ -7,8 +7,9 @@ const LOGIN_URL = BASE_URL + '/login';
 const SPECIFIC_USER_URL = id => USERS_URL + '/' + id;
 const TRANSACTIONS_URL = BASE_URL + '/transactions';
 
-const IEX_API_URL = 'https://cloud.iexapis.com/stable/'
+const IEX_API_URL = 'https://sandbox.iexapis.com/stable/'
 const IEX_TOKEN = process.env.REACT_APP_IEX_API_TOKEN
+const IEX_SANDBOX_SECRET_TOKEN = process.env.REACT_APP_IEX_SANDBOX_SECRET_TOKEN
 
 // Redux Actions
 
@@ -26,7 +27,25 @@ const clearUserAction = () => ({
 
 // Fetch
 
-const newUserToDB = userObj => dispatch => {
+// Pattern without error Handling:
+// const newUserToDB = userObj => dispatch => {
+//   const config = {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify(userObj)
+//   };
+//   fetch(USERS_URL, config)
+//     .then(r => r.json())
+//     .then(data => {
+//       dispatch(setUserAction(data.user));
+//       localStorage.setItem('token', data.token);
+//     });
+// };
+
+// Pattern with error Handling:
+const newUserToDB = userObj => {
   const config = {
     method: 'POST',
     headers: {
@@ -34,12 +53,8 @@ const newUserToDB = userObj => dispatch => {
     },
     body: JSON.stringify(userObj)
   };
-  fetch(USERS_URL, config)
+  return fetch(USERS_URL, config)
     .then(r => r.json())
-    .then(data => {
-      dispatch(setUserAction(data.user));
-      localStorage.setItem('token', data.token);
-    });
 };
 
 const deleteUserFromDB = userId => dispatch => {
@@ -52,23 +67,8 @@ const deleteUserFromDB = userId => dispatch => {
   });
 };
 
-const loginUserToDB = userCredentials => dispatch => {
-  const config = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(userCredentials)
-  };
-  fetch(LOGIN_URL, config)
-    .then(r => r.json())
-    .then(data => {
-      dispatch(setUserAction(data.user));
-      localStorage.setItem('token', data.token);
-    })
-};
-
-// const loginUserToDB = userCredentials => {
+// Pattern without error Handling:
+// const loginUserToDB = userCredentials => dispatch => {
 //   const config = {
 //     method: 'POST',
 //     headers: {
@@ -76,9 +76,26 @@ const loginUserToDB = userCredentials => dispatch => {
 //     },
 //     body: JSON.stringify(userCredentials)
 //   };
-//   return fetch(LOGIN_URL, config)
+//   fetch(LOGIN_URL, config)
 //     .then(r => r.json())
+//     .then(data => {
+//       dispatch(setUserAction(data.user));
+//       localStorage.setItem('token', data.token);
+//     })
 // };
+
+// Pattern with error Handling:
+const loginUserToDB = userCredentials => {
+  const config = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(userCredentials)
+  };
+  return fetch(LOGIN_URL, config)
+    .then(r => r.json())
+};
 
 const persistUser = () => dispatch => {
   const config = {
@@ -104,5 +121,6 @@ export default {
   deleteUserFromDB,
   loginUserToDB,
   persistUser,
-  logoutUser
+  logoutUser,
+  setUserAction
 };

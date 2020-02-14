@@ -13,27 +13,29 @@ const LoginPage = props => {
   });
 
   // controlled form functions
-  const handleSubmit = e => {
-    e.preventDefault();
-    dispatch(userActions.loginUserToDB(loginForm));
-    props.history.push('/');
-  };
-
-  // The following could be used for error handling:
+  // login without error handling
   // const handleSubmit = e => {
   //   e.preventDefault();
-  //   userActions.loginUserToDB(loginForm)
-  //   .then(data => {
-  //     if(data.errors) {
-  //         console.log(data.errors)
-  //         alert("Unable to login")
-  //     } else {
-  //       dispatch(userActions.setUserAction(data.user));
-  //       localStorage.setItem('token', data.token);
-  //       props.history.push('/');
-  //     }
-  //   })
+  //   dispatch(userActions.loginUserToDB(loginForm));
+  //   props.history.push('/');
   // };
+
+  // The following could be used for error handling:
+  const handleSubmit = e => {
+    e.preventDefault();
+    userActions.loginUserToDB(loginForm)
+    .then(data => {
+      if(!data.user) {
+          // console.log(data.errors);
+          alert(data.errors);
+          return;
+      } else {
+        dispatch(userActions.setUserAction(data.user));
+        localStorage.setItem('token', data.token);
+        props.history.push('/');
+      }
+    })
+  };
 
   const handleChange = e =>
     setLoginForm({ ...loginForm, [e.target.name]: e.target.value });
