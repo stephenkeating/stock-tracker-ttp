@@ -2977,3 +2977,157 @@ Processing by AuthController#persist as */*
 Completed 200 OK in 9ms (Views: 4.3ms | ActiveRecord: 2.0ms | Allocations: 2085)
 
 
+Started GET "/auth" for ::1 at 2020-02-14 13:38:00 -0500
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 66ms (Views: 17.0ms | ActiveRecord: 15.3ms | Allocations: 15709)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 13:39:40 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 11ms (Views: 5.8ms | ActiveRecord: 1.8ms | Allocations: 1983)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 13:40:04 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 9ms (Views: 3.6ms | ActiveRecord: 1.3ms | Allocations: 1983)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 13:43:47 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (2.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 10ms (Views: 3.5ms | ActiveRecord: 4.3ms | Allocations: 1965)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 13:47:19 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 9ms (Views: 4.5ms | ActiveRecord: 1.3ms | Allocations: 1983)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 13:48:10 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 1.1ms | Allocations: 1983)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 13:49:24 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 8ms (Views: 4.3ms | ActiveRecord: 0.8ms | Allocations: 1965)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 13:49:46 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 0.9ms | Allocations: 1965)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 13:50:40 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 1.2ms | Allocations: 1965)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 13:51:35 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 10ms (Views: 5.2ms | ActiveRecord: 1.2ms | Allocations: 1965)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 13:52:01 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 10ms (Views: 3.4ms | ActiveRecord: 1.1ms | Allocations: 1965)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 13:52:19 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 11ms (Views: 5.8ms | ActiveRecord: 1.0ms | Allocations: 1965)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 13:54:22 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 8ms (Views: 4.6ms | ActiveRecord: 0.8ms | Allocations: 1965)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 13:54:30 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 8ms (Views: 3.8ms | ActiveRecord: 0.9ms | Allocations: 1965)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 13:54:39 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 7ms (Views: 3.6ms | ActiveRecord: 1.0ms | Allocations: 1965)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 13:54:59 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.9ms | Allocations: 1966)
+
+
+Started GET "/auth" for ::1 at 2020-02-14 14:01:21 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (1.0ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 2.0ms | Allocations: 2086)
+
+
