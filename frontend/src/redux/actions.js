@@ -8,8 +8,8 @@ const SPECIFIC_USER_URL = id => USERS_URL + '/' + id;
 const TRANSACTIONS_URL = BASE_URL + '/transactions';
 
 const IEX_API_URL = 'https://sandbox.iexapis.com/stable/'
-const IEX_TOKEN = process.env.REACT_APP_IEX_API_TOKEN
 const IEX_SANDBOX_SECRET_TOKEN = process.env.REACT_APP_IEX_SANDBOX_SECRET_TOKEN
+// const IEX_TOKEN = process.env.REACT_APP_IEX_API_TOKEN
 
 // Redux Actions
 
@@ -18,6 +18,13 @@ const setUserAction = userObj => {
   return {
     type: 'SET_USER',
     payload: userObj
+  }
+};
+
+const setTransactionsAction = transactionsObj => {
+  return {
+    type: 'SET_TRANSACTIONS',
+    payload: transactionsObj
   }
 };
 
@@ -106,8 +113,9 @@ const persistUser = () => dispatch => {
   };
   fetch(PERSIST_URL, config)
     .then(r => r.json())
-    .then(userInstance => {
-      dispatch(setUserAction(userInstance));
+    .then(data => {
+      dispatch(setUserAction(data.user));
+      dispatch(setTransactionsAction(data.transactions));
     });
 };
 
@@ -122,5 +130,6 @@ export default {
   loginUserToDB,
   persistUser,
   logoutUser,
-  setUserAction
+  setUserAction,
+  setTransactionsAction
 };

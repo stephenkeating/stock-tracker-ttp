@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def show
       user = User.find(params[:id])
-      render json: user
+      render json: {user: user, transactions: user.transactions}
   end
 
   def create
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       if user.valid?
           user = user
           token = JWT.encode({user_id: user.id}, secret, 'HS256')
-          render json: {user: user, token: token}
+          render json: {user: user, token: token, transactions: user.transactions}
       else
           render json: {errors: user.errors.full_messages}
       end
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   def update
       user = User.find(params[:id])
       user.update(user_params)
-      render json: user
+      render json: {user: user, transactions: user.transactions}
   end
 
   def destroy

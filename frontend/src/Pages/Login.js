@@ -30,7 +30,9 @@ const LoginPage = props => {
           alert(data.errors);
           return;
       } else {
+        console.log(data)
         dispatch(userActions.setUserAction(data.user));
+        dispatch(userActions.setTransactionsAction(data.transactions));
         localStorage.setItem('token', data.token);
         props.history.push('/');
       }

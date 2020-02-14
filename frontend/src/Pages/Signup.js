@@ -36,6 +36,7 @@ const Signup = props => {
           return;
         } else {
         dispatch(userActions.setUserAction(data.user));
+        dispatch(userActions.setTransactionsAction(data.transactions));
         localStorage.setItem('token', data.token);
         history.push('/');
     }
