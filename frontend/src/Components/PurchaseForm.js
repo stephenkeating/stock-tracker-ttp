@@ -10,12 +10,13 @@ const PurchaseForm = props => {
   const [quoteForm, setQuoteForm] = useState({
     ticker: '',
     quantity: 0,
-    latestPrice: 0,
+    price: 0,
     showQuote: false
   });
 
   // getting user balance from redux
   const balance = useSelector(state => parseFloat(state.user.balance));
+  const user = useSelector(state => state.user);
 
   const handleQuoteSubmit = e => {
     e.preventDefault();
@@ -43,13 +44,19 @@ const PurchaseForm = props => {
     if ( e.target.quotePrice.value > balance ) {
       alert('Insufficient Funds')
     } else {
-      // console.log( ticker, quantity, quotePrice );
-      console.log( quoteForm, balance );
+      console.log( quoteForm, balance, user.id );
+      // save purchase to backend, add to transactions in state or re-fetch state
+      userActions.newTransactionToDB({ticker: quoteForm.ticker, quantity: quoteForm.quantity, price: quoteForm.price, user_id: user.id.toString()})
+      .then (data => {
+        console.log(data)
+      })
+      // clear form
+
     }
   }
 
   const saveQuote = data =>
-    setQuoteForm({ ...quoteForm, latestPrice: data.latestPrice, showQuote: true});
+    setQuoteForm({ ...quoteForm, price: data.latestPrice, showQuote: true});
 
   const handleTickerChange = e =>
     setQuoteForm({ ...quoteForm, [e.target.name]: e.target.value.toUpperCase(), showQuote: false });
@@ -58,7 +65,7 @@ const PurchaseForm = props => {
     setQuoteForm({ ...quoteForm, [e.target.name]: Math.round(e.target.value), showQuote: false });
 
   // Destructuring keys from our local state to use in the form
-  const { ticker, quantity, showQuote, latestPrice } = quoteForm;
+  const { ticker, quantity, showQuote, price } = quoteForm;
 
   // Component code
   return (
@@ -87,7 +94,7 @@ const PurchaseForm = props => {
               type="number"
               name="quotePrice"
               readOnly
-              value={(latestPrice * quantity)}
+              value={(price * quantity)}
             />
             <input type="submit" value='Buy Shares'/>
           </form>

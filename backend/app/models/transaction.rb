@@ -13,7 +13,7 @@ class Transaction < ApplicationRecord
     map
   end
 
-  def self.find_transactions_quantity_sum(transactions, ticker)
+  def self.find_ticker_shares(transactions, ticker)
     transactions.where(ticker: ticker).map{ |t| t.quantity }.inject(:+)
   end
 end

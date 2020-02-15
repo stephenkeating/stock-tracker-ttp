@@ -4032,3 +4032,816 @@ Processing by AuthController#persist as */*
 Completed 200 OK in 8ms (Views: 3.6ms | ActiveRecord: 1.1ms | Allocations: 1965)
 
 
+Started GET "/rails/info/routes" for ::1 at 2020-02-15 15:27:18 -0500
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/stephenkeating/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/stephenkeating/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [31 times] (Duration: 9.2ms | Allocations: 4420)
+  Rendered /Users/stephenkeating/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 4.0ms | Allocations: 932)
+  Rendered /Users/stephenkeating/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 18.0ms | Allocations: 7570)
+Completed 200 OK in 29ms (Views: 23.9ms | ActiveRecord: 0.0ms | Allocations: 9457)
+
+
+Started GET "/auth" for ::1 at 2020-02-15 15:34:41 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (1.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 17ms (Views: 9.2ms | ActiveRecord: 2.8ms | Allocations: 2133)
+
+
+Started POST "/transactions" for ::1 at 2020-02-15 15:35:02 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"AAPL", "quantity"=>1, "price"=>325.79, "showQuote"=>true, "transaction"=>{"price"=>325.79, "quantity"=>1, "ticker"=>"AAPL"}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 141)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user_id):
+  
+app/controllers/transactions_controller.rb:23:in `transaction_params'
+app/controllers/transactions_controller.rb:10:in `create'
+Started GET "/auth" for ::1 at 2020-02-15 15:36:11 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 1.1ms | Allocations: 1964)
+
+
+Started GET "/auth" for ::1 at 2020-02-15 15:37:04 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 9ms (Views: 4.5ms | ActiveRecord: 1.8ms | Allocations: 1965)
+
+
+Started GET "/auth" for ::1 at 2020-02-15 15:37:56 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 1.1ms | Allocations: 1965)
+
+
+Started POST "/transactions" for ::1 at 2020-02-15 15:38:02 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"_json"=>"AAPL", "transaction"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 113)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user_id):
+  
+app/controllers/transactions_controller.rb:23:in `transaction_params'
+app/controllers/transactions_controller.rb:10:in `create'
+Started GET "/auth" for ::1 at 2020-02-15 15:39:04 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 1.3ms | Allocations: 1964)
+
+
+Started POST "/transactions" for ::1 at 2020-02-15 15:39:22 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"_json"=>"AAPL", "transaction"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 113)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user_id):
+  
+app/controllers/transactions_controller.rb:23:in `transaction_params'
+app/controllers/transactions_controller.rb:10:in `create'
+Started GET "/auth" for ::1 at 2020-02-15 15:40:17 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 10ms (Views: 5.3ms | ActiveRecord: 1.2ms | Allocations: 1964)
+
+
+Started POST "/transactions" for ::1 at 2020-02-15 15:40:22 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"AAPL", "quantity"=>1, "price"=>335.56, "user_id"=>5, "transaction"=>{"price"=>335.56, "quantity"=>1, "ticker"=>"AAPL", "user_id"=>5}}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 836)
+
+
+  
+NoMethodError (undefined method `permit' for 5:Integer):
+  
+app/controllers/transactions_controller.rb:23:in `transaction_params'
+app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 ORDER BY "transactions"."id" ASC LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 11]]
+Started GET "/auth" for ::1 at 2020-02-15 15:46:42 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (1.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 11ms (Views: 5.1ms | ActiveRecord: 2.9ms | Allocations: 2084)
+
+
+Started POST "/transactions" for ::1 at 2020-02-15 15:46:50 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"AAPL", "quantity"=>1, "price"=>329.03, "transaction"=>{"price"=>329.03, "quantity"=>1, "ticker"=>"AAPL"}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 118)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user_id):
+  
+app/controllers/transactions_controller.rb:23:in `transaction_params'
+app/controllers/transactions_controller.rb:10:in `create'
+Started GET "/auth" for ::1 at 2020-02-15 15:47:50 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 8ms (Views: 3.7ms | ActiveRecord: 1.5ms | Allocations: 1964)
+
+
+Started POST "/transactions" for ::1 at 2020-02-15 15:47:55 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"AAPL", "quantity"=>1, "price"=>325.64, "user_id"=>5, "transaction"=>{"price"=>325.64, "quantity"=>1, "ticker"=>"AAPL", "user_id"=>5}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 829)
+
+
+  
+NoMethodError (undefined method `permit' for 5:Integer):
+  
+app/controllers/transactions_controller.rb:23:in `transaction_params'
+app/controllers/transactions_controller.rb:10:in `create'
+Started POST "/transactions" for ::1 at 2020-02-15 15:49:14 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"AAPL", "quantity"=>1, "price"=>325.64, "user_id"=>5, "transaction"=>{"price"=>325.64, "quantity"=>1, "ticker"=>"AAPL", "user_id"=>5}}
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mTransaction Create (1.5ms)[0m  [1m[32mINSERT INTO "transactions" ("price", "quantity", "ticker", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["price", "325.64"], ["quantity", 1], ["ticker", "AAPL"], ["user_id", 5], ["created_at", "2020-02-15 20:49:14.195410"], ["updated_at", "2020-02-15 20:49:14.195410"]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 24.2ms | Allocations: 12954)
+
+
+  
+ArgumentError (Unsupported argument type: 5 (Integer)):
+  
+app/controllers/transactions_controller.rb:11:in `create'
+Started GET "/auth" for ::1 at 2020-02-15 15:49:25 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 10ms (Views: 4.9ms | ActiveRecord: 1.7ms | Allocations: 2455)
+
+
+Started GET "/auth" for ::1 at 2020-02-15 15:49:44 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 77ms (Views: 13.8ms | ActiveRecord: 13.3ms | Allocations: 15883)
+
+
+Started POST "/transactions" for ::1 at 2020-02-15 15:49:49 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"AAPL", "quantity"=>1, "price"=>338.76, "user_id"=>5, "transaction"=>{"price"=>338.76, "quantity"=>1, "ticker"=>"AAPL", "user_id"=>5}}
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mTransaction Create (1.0ms)[0m  [1m[32mINSERT INTO "transactions" ("price", "quantity", "ticker", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["price", "338.76"], ["quantity", 1], ["ticker", "AAPL"], ["user_id", 5], ["created_at", "2020-02-15 20:49:49.127313"], ["updated_at", "2020-02-15 20:49:49.127313"]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 3.2ms | Allocations: 3867)
+
+
+  
+ArgumentError (Unsupported argument type: 5 (Integer)):
+  
+app/controllers/transactions_controller.rb:11:in `create'
+Started GET "/auth" for ::1 at 2020-02-15 15:50:43 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 1.1ms | Allocations: 2261)
+
+
+Started POST "/transactions" for ::1 at 2020-02-15 15:50:48 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"AAPL", "quantity"=>1, "price"=>333.17, "transaction"=>{"price"=>333.17, "quantity"=>1, "ticker"=>"AAPL"}}
+[31mUnpermitted parameter: :transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 4361)
+
+
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `transactions' for #<User::ActiveRecord_Relation:0x00007fe8e09e2a70>):
+  
+app/controllers/transactions_controller.rb:12:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/auth" for ::1 at 2020-02-15 15:51:56 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 10ms (Views: 4.9ms | ActiveRecord: 1.2ms | Allocations: 2243)
+
+
+Started POST "/transactions" for ::1 at 2020-02-15 15:52:02 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"AAPL", "quantity"=>1, "price"=>329.55, "user_id"=>"5", "transaction"=>{"price"=>329.55, "quantity"=>1, "ticker"=>"AAPL", "user_id"=>"5"}}
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mTransaction Create (0.8ms)[0m  [1m[32mINSERT INTO "transactions" ("price", "quantity", "ticker", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["price", "329.55"], ["quantity", 1], ["ticker", "AAPL"], ["user_id", 5], ["created_at", "2020-02-15 20:52:02.294165"], ["updated_at", "2020-02-15 20:52:02.294165"]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 2.7ms | Allocations: 5780)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `transactions' for #<User::ActiveRecord_Relation:0x00007fe8dd469ab0>):
+  
+app/controllers/transactions_controller.rb:12:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 11]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 11]]
+Started POST "/transactions" for ::1 at 2020-02-15 15:55:06 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"AAPL", "quantity"=>1, "price"=>329.55, "user_id"=>"5", "transaction"=>{"price"=>329.55, "quantity"=>1, "ticker"=>"AAPL", "user_id"=>"5"}}
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mTransaction Create (0.6ms)[0m  [1m[32mINSERT INTO "transactions" ("price", "quantity", "ticker", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["price", "329.55"], ["quantity", 1], ["ticker", "AAPL"], ["user_id", 5], ["created_at", "2020-02-15 20:55:06.492543"], ["updated_at", "2020-02-15 20:55:06.492543"]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+[31mUnpermitted parameter: :transaction[0m
+[31mUnpermitted parameter: :transaction[0m
+[31mUnpermitted parameter: :transaction[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 10.5ms | Allocations: 15257)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `stock_withdraw' for #<User::ActiveRecord_Relation:0x00007fe8dd462fa8>):
+  
+app/controllers/transactions_controller.rb:15:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test@test.com"], ["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Update (2.4ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", "4990.0"], ["updated_at", "2020-02-15 20:55:55.607810"], ["id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/auth" for ::1 at 2020-02-15 15:57:21 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 37ms (Views: 10.7ms | ActiveRecord: 10.9ms | Allocations: 12818)
+
+
+Started POST "/transactions" for ::1 at 2020-02-15 15:57:48 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"AAPL", "quantity"=>1, "price"=>334.73, "user_id"=>"5", "transaction"=>{"price"=>334.73, "quantity"=>1, "ticker"=>"AAPL", "user_id"=>"5"}}
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mTransaction Create (0.6ms)[0m  [1m[32mINSERT INTO "transactions" ("price", "quantity", "ticker", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["price", "334.73"], ["quantity", 1], ["ticker", "AAPL"], ["user_id", 5], ["created_at", "2020-02-15 20:57:48.914772"], ["updated_at", "2020-02-15 20:57:48.914772"]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.6ms | Allocations: 5962)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `transactions' for #<User::ActiveRecord_Relation:0x00007fe8e08b0990>):
+  
+app/controllers/transactions_controller.rb:12:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/auth" for ::1 at 2020-02-15 16:04:12 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 32ms (Views: 12.2ms | ActiveRecord: 1.6ms | Allocations: 12695)
+
+
+Started POST "/transactions" for ::1 at 2020-02-15 16:04:22 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"AAPL", "quantity"=>1, "price"=>328.42, "user_id"=>5, "transaction"=>{"price"=>328.42, "quantity"=>1, "ticker"=>"AAPL", "user_id"=>5}}
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mTransaction Create (1.4ms)[0m  [1m[32mINSERT INTO "transactions" ("price", "quantity", "ticker", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["price", "328.42"], ["quantity", 1], ["ticker", "AAPL"], ["user_id", 5], ["created_at", "2020-02-15 21:04:22.322875"], ["updated_at", "2020-02-15 21:04:22.322875"]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 2.6ms | Allocations: 3668)
+
+
+  
+ArgumentError (Unsupported argument type: 5 (Integer)):
+  
+app/controllers/transactions_controller.rb:11:in `create'
+Started GET "/auth" for ::1 at 2020-02-15 16:04:35 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (3.0ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 12ms (Views: 5.6ms | ActiveRecord: 3.6ms | Allocations: 2799)
+
+
+Started GET "/auth" for ::1 at 2020-02-15 16:04:42 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.9ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 28ms (Views: 8.2ms | ActiveRecord: 1.7ms | Allocations: 2803)
+
+
+Started POST "/transactions" for ::1 at 2020-02-15 16:05:21 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"AAPL", "quantity"=>1, "price"=>324.97, "user_id"=>"5", "transaction"=>{"price"=>324.97, "quantity"=>1, "ticker"=>"AAPL", "user_id"=>"5"}}
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mTransaction Create (1.0ms)[0m  [1m[32mINSERT INTO "transactions" ("price", "quantity", "ticker", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["price", "324.97"], ["quantity", 1], ["ticker", "AAPL"], ["user_id", 5], ["created_at", "2020-02-15 21:05:21.898399"], ["updated_at", "2020-02-15 21:05:21.898399"]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 7.7ms | Allocations: 5751)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `transactions' for #<User::ActiveRecord_Relation:0x00007fe8dd3f2758>):
+  
+app/controllers/transactions_controller.rb:12:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/auth" for ::1 at 2020-02-15 16:05:37 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.8ms | Allocations: 2938)
+
+
+Started POST "/transactions" for ::1 at 2020-02-15 16:05:56 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"AAPL", "quantity"=>1, "price"=>325.52, "user_id"=>"5", "transaction"=>{"price"=>325.52, "quantity"=>1, "ticker"=>"AAPL", "user_id"=>"5"}}
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mTransaction Create (1.5ms)[0m  [1m[32mINSERT INTO "transactions" ("price", "quantity", "ticker", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["price", "325.52"], ["quantity", 1], ["ticker", "AAPL"], ["user_id", 5], ["created_at", "2020-02-15 21:05:56.809063"], ["updated_at", "2020-02-15 21:05:56.809063"]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 4.0ms | Allocations: 5746)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `transactions' for #<User::ActiveRecord_Relation:0x00007fe8e0a28340>):
+  
+app/controllers/transactions_controller.rb:12:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/transactions" for ::1 at 2020-02-15 16:09:19 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"AAPL", "quantity"=>1, "price"=>325.52, "user_id"=>"5", "transaction"=>{"price"=>325.52, "quantity"=>1, "ticker"=>"AAPL", "user_id"=>"5"}}
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mTransaction Create (0.7ms)[0m  [1m[32mINSERT INTO "transactions" ("price", "quantity", "ticker", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["price", "325.52"], ["quantity", 1], ["ticker", "AAPL"], ["user_id", 5], ["created_at", "2020-02-15 21:09:19.524314"], ["updated_at", "2020-02-15 21:09:19.524314"]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 16.1ms | Allocations: 15023)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `transactions' for #<User::ActiveRecord_Relation:0x00007fe8de967138>):
+  
+app/controllers/transactions_controller.rb:12:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test@test.com"], ["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", "4980.0"], ["updated_at", "2020-02-15 21:09:59.211749"], ["id", 5]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/auth" for ::1 at 2020-02-15 16:10:54 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 96ms (Views: 21.0ms | ActiveRecord: 14.4ms | Allocations: 13548)
+
+
+Started POST "/transactions" for ::1 at 2020-02-15 16:11:41 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"AAPL", "quantity"=>1, "price"=>326.59, "user_id"=>"5", "transaction"=>{"price"=>326.59, "quantity"=>1, "ticker"=>"AAPL", "user_id"=>"5"}}
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mTransaction Create (0.6ms)[0m  [1m[32mINSERT INTO "transactions" ("price", "quantity", "ticker", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["price", "326.59"], ["quantity", 1], ["ticker", "AAPL"], ["user_id", 5], ["created_at", "2020-02-15 21:11:41.430469"], ["updated_at", "2020-02-15 21:11:41.430469"]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 10.7ms | Allocations: 15010)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `transactions' for #<User::ActiveRecord_Relation:0x00007fe8df0cd030>):
+  
+app/controllers/transactions_controller.rb:12:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/transactions" for ::1 at 2020-02-15 16:12:06 -0500
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"AAPL", "quantity"=>1, "price"=>326.59, "user_id"=>"5", "transaction"=>{"price"=>326.59, "quantity"=>1, "ticker"=>"AAPL", "user_id"=>"5"}}
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mTransaction Create (1.1ms)[0m  [1m[32mINSERT INTO "transactions" ("price", "quantity", "ticker", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["price", "326.59"], ["quantity", 1], ["ticker", "AAPL"], ["user_id", 5], ["created_at", "2020-02-15 21:12:06.684283"], ["updated_at", "2020-02-15 21:12:06.684283"]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 15.6ms | Allocations: 17515)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `transactions' for #<User::ActiveRecord_Relation:0x00007f809c12d710>):
+  
+app/controllers/transactions_controller.rb:12:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/transactions" for ::1 at 2020-02-15 16:17:49 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"AAPL", "quantity"=>1, "price"=>326.59, "user_id"=>"5", "transaction"=>{"price"=>326.59, "quantity"=>1, "ticker"=>"AAPL", "user_id"=>"5"}}
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mTransaction Create (1.2ms)[0m  [1m[32mINSERT INTO "transactions" ("price", "quantity", "ticker", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["price", "326.59"], ["quantity", 1], ["ticker", "AAPL"], ["user_id", 5], ["created_at", "2020-02-15 21:17:49.187556"], ["updated_at", "2020-02-15 21:17:49.187556"]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 14.4ms | Allocations: 17515)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `transactions' for #<User::ActiveRecord_Relation:0x00007fd95c206240>):
+  
+app/controllers/transactions_controller.rb:12:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/transactions" for ::1 at 2020-02-15 16:17:49 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"AAPL", "quantity"=>1, "price"=>326.59, "user_id"=>"5", "transaction"=>{"price"=>326.59, "quantity"=>1, "ticker"=>"AAPL", "user_id"=>"5"}}
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mTransaction Create (1.0ms)[0m  [1m[32mINSERT INTO "transactions" ("price", "quantity", "ticker", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["price", "326.59"], ["quantity", 1], ["ticker", "AAPL"], ["user_id", 5], ["created_at", "2020-02-15 21:17:49.521786"], ["updated_at", "2020-02-15 21:17:49.521786"]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 4.9ms | Allocations: 5782)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `transactions' for #<User::ActiveRecord_Relation:0x00007fd95ea7b040>):
+  
+app/controllers/transactions_controller.rb:12:in `create'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/auth" for ::1 at 2020-02-15 16:18:18 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (1.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 19ms (Views: 7.3ms | ActiveRecord: 2.3ms | Allocations: 4876)
+
+
+Started POST "/transactions" for ::1 at 2020-02-15 16:18:32 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"AAPL", "quantity"=>1, "price"=>337.72, "user_id"=>"5", "transaction"=>{"price"=>337.72, "quantity"=>1, "ticker"=>"AAPL", "user_id"=>"5"}}
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mTransaction Create (0.8ms)[0m  [1m[32mINSERT INTO "transactions" ("price", "quantity", "ticker", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["price", "337.72"], ["quantity", 1], ["ticker", "AAPL"], ["user_id", 5], ["created_at", "2020-02-15 21:18:32.325225"], ["updated_at", "2020-02-15 21:18:32.325225"]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 3.6ms | Allocations: 5783)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `transactions' for #<User::ActiveRecord_Relation:0x00007fd95c1f6200>):
+  
+app/controllers/transactions_controller.rb:12:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (5) LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 11]]
+Started POST "/transactions" for ::1 at 2020-02-15 16:25:43 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"AAPL", "quantity"=>1, "price"=>337.72, "user_id"=>"5", "transaction"=>{"price"=>337.72, "quantity"=>1, "ticker"=>"AAPL", "user_id"=>"5"}}
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mTransaction Create (1.4ms)[0m  [1m[32mINSERT INTO "transactions" ("price", "quantity", "ticker", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["price", "337.72"], ["quantity", 1], ["ticker", "AAPL"], ["user_id", 5], ["created_at", "2020-02-15 21:25:43.207746"], ["updated_at", "2020-02-15 21:25:43.207746"]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:11:in `create'
+[31mUnpermitted parameter: :transaction[0m
+[31mUnpermitted parameter: :transaction[0m
+[31mUnpermitted parameter: :transaction[0m
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 11]]
+  [1m[36mCACHE Transaction Load (0.0ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 190ms (ActiveRecord: 3.3ms | Allocations: 87433)
+
+
+  [1m[36mCACHE Transaction Load (0.0ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 11]]
+  
+NameError (undefined local variable or method `sum' for #<TransactionsController:0x00007fd95bd73ea8>
+Did you mean?  @sum):
+  
+app/controllers/transactions_controller.rb:15:in `create'
+  [1m[36mCACHE Transaction Load (0.0ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 11]]
+Started POST "/transactions" for ::1 at 2020-02-15 16:26:28 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"AAPL", "quantity"=>1, "price"=>337.72, "user_id"=>"5", "transaction"=>{"price"=>337.72, "quantity"=>1, "ticker"=>"AAPL", "user_id"=>"5"}}
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mTransaction Create (0.7ms)[0m  [1m[32mINSERT INTO "transactions" ("price", "quantity", "ticker", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["price", "337.72"], ["quantity", 1], ["ticker", "AAPL"], ["user_id", 5], ["created_at", "2020-02-15 21:26:28.326502"], ["updated_at", "2020-02-15 21:26:28.326502"]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:11:in `create'
+[31mUnpermitted parameter: :transaction[0m
+[31mUnpermitted parameter: :transaction[0m
+[31mUnpermitted parameter: :transaction[0m
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 18.2ms | Allocations: 16111)
+
+
+  
+NameError (undefined local variable or method `params' for #<User:0x00007fd95e8c8108>):
+  
+app/models/user.rb:14:in `stock_withdraw'
+app/controllers/transactions_controller.rb:15:in `create'
+Started POST "/transactions" for ::1 at 2020-02-15 16:28:03 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"AAPL", "quantity"=>1, "price"=>337.72, "user_id"=>"5", "transaction"=>{"price"=>337.72, "quantity"=>1, "ticker"=>"AAPL", "user_id"=>"5"}}
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mTransaction Create (0.6ms)[0m  [1m[32mINSERT INTO "transactions" ("price", "quantity", "ticker", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["price", "337.72"], ["quantity", 1], ["ticker", "AAPL"], ["user_id", 5], ["created_at", "2020-02-15 21:28:03.971454"], ["updated_at", "2020-02-15 21:28:03.971454"]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:11:in `create'
+[31mUnpermitted parameter: :transaction[0m
+[31mUnpermitted parameter: :transaction[0m
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test@test.com"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", "4642.28"], ["updated_at", "2020-02-15 21:28:03.983033"], ["id", 5]]
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+[31mUnpermitted parameter: :transaction[0m
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."ticker" = $2[0m  [["user_id", 5], ["ticker", "AAPL"]]
+  ↳ app/models/transaction.rb:17:in `map'
+[31mUnpermitted parameter: :transaction[0m
+Completed 200 OK in 47ms (Views: 0.3ms | ActiveRecord: 14.1ms | Allocations: 18507)
+
+
+Started GET "/auth" for ::1 at 2020-02-15 16:28:59 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 14ms (Views: 7.4ms | ActiveRecord: 1.7ms | Allocations: 4498)
+
+
+Started POST "/transactions" for ::1 at 2020-02-15 16:34:52 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"IBM", "quantity"=>1, "price"=>152.6, "user_id"=>"5", "transaction"=>{"price"=>152.6, "quantity"=>1, "ticker"=>"IBM", "user_id"=>"5"}}
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mTransaction Create (1.4ms)[0m  [1m[32mINSERT INTO "transactions" ("price", "quantity", "ticker", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["price", "152.6"], ["quantity", 1], ["ticker", "IBM"], ["user_id", 5], ["created_at", "2020-02-15 21:34:52.715025"], ["updated_at", "2020-02-15 21:34:52.715025"]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:11:in `create'
+[31mUnpermitted parameter: :transaction[0m
+[31mUnpermitted parameter: :transaction[0m
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test@test.com"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", "4489.68"], ["updated_at", "2020-02-15 21:34:52.726709"], ["id", 5]]
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+[31mUnpermitted parameter: :transaction[0m
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."ticker" = $2[0m  [["user_id", 5], ["ticker", "IBM"]]
+  ↳ app/models/transaction.rb:17:in `map'
+[31mUnpermitted parameter: :transaction[0m
+Completed 200 OK in 36ms (Views: 0.4ms | ActiveRecord: 5.9ms | Allocations: 17745)
+
+
+Started POST "/transactions" for ::1 at 2020-02-15 16:36:18 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"IBM", "quantity"=>1, "price"=>152.6, "user_id"=>"5", "transaction"=>{"price"=>152.6, "quantity"=>1, "ticker"=>"IBM", "user_id"=>"5"}}
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mTransaction Create (1.0ms)[0m  [1m[32mINSERT INTO "transactions" ("price", "quantity", "ticker", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["price", "152.6"], ["quantity", 1], ["ticker", "IBM"], ["user_id", 5], ["created_at", "2020-02-15 21:36:18.051325"], ["updated_at", "2020-02-15 21:36:18.051325"]]
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:10:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:11:in `create'
+[31mUnpermitted parameter: :transaction[0m
+[31mUnpermitted parameter: :transaction[0m
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test@test.com"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", "4337.08"], ["updated_at", "2020-02-15 21:36:18.064865"], ["id", 5]]
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+[31mUnpermitted parameter: :transaction[0m
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."ticker" = $2[0m  [["user_id", 5], ["ticker", "IBM"]]
+  ↳ app/models/transaction.rb:17:in `map'
+[31mUnpermitted parameter: :transaction[0m
+Completed 200 OK in 36ms (Views: 0.8ms | ActiveRecord: 8.8ms | Allocations: 8374)
+
+
+Started GET "/transactions" for ::1 at 2020-02-15 16:38:10 -0500
+Processing by TransactionsController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 2654)
+
+
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  
+NoMethodError (undefined method `transactions' for #<User::ActiveRecord_Relation:0x00007fd95c1f4d88>):
+  
+app/controllers/transactions_controller.rb:4:in `index'
+Started GET "/transactions/1" for ::1 at 2020-02-15 16:38:26 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for TransactionsController):
+  
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/auth" for ::1 at 2020-02-15 16:52:14 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (1.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 100ms (Views: 63.1ms | ActiveRecord: 2.9ms | Allocations: 14805)
+
+

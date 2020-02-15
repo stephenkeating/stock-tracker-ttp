@@ -7,32 +7,32 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    transaction = Transaction.create(transaction_params)
-    current_user = User.where(params[:user_id])
-    transactions = current_user.transactions
-    sum = (transaction_params[:price].to_f * transaction_params[:quantity].to_i).round(2)
-    ticker = transaction_params[:ticker]
-    current_user.stock_withdraw(sum)
-    ticker_quantity_sum = Transaction.find_transactions_quantity_sum(@transacts, transact_params[:ticker])
-    render json: { transaction: transaction, balance: current_user.balance, ticker_quantity_sum: ticker_quantity_sum, ticker: transaction_params[:ticker]}
+    @transaction = Transaction.create(transaction_params)
+    @user = User.find(params[:user_id])
+    @transactions = @user.transactions
+    @sum = (transaction_params[:price].to_f * transaction_params[:quantity].to_i).round(2)
+    @ticker = transaction_params[:ticker]
+    @user.stock_withdraw(@sum)
+    @ticker_shares = Transaction.find_ticker_shares(@transactions, transaction_params[:ticker])
+    render json: { transaction: @transaction, balance: @user.balance, ticker_shares: @ticker_shares, ticker: transaction_params[:ticker]}
   end
 
   private
 
   def transaction_params
-      params.require(:user_id).permit(:ticker, :price, :quantity)
+      params.permit(:ticker, :price, :quantity, :user_id)
   end
 
 end
 
 # def purchase
 #   @transact = Transact.create(transact_params)
-#   @transacts= current_user.transacts
+#   @transacts= user.transacts
 #   sum = (transact_params[:price].to_f * transact_params[:quantity].to_i).round(2)
 #   ticker = transact_params[:ticker]
-#   current_user.stock_withdraw(sum)
-#   ticker_quantity_sum = Transact.find_transactions_quantity_sum(@transacts, transact_params[:ticker])
-#   render json: { transaction: TransactSerializer.new(@transact), balance: current_user.balance, ticker_quantity_sum: ticker_quantity_sum, ticker: transact_params[:ticker]}, status: :accepted
+#   user.stock_withdraw(sum)
+#   ticker_shares = Transact.find_ticker_shares(@transacts, transact_params[:ticker])
+#   render json: { transaction: TransactSerializer.new(@transact), balance: user.balance, ticker_shares: ticker_shares, ticker: transact_params[:ticker]}, status: :accepted
 # end
 
 

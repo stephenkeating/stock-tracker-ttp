@@ -4,6 +4,7 @@ const BASE_URL = 'http://localhost:3000';
 const USERS_URL = BASE_URL + '/users';
 const PERSIST_URL = BASE_URL + '/auth';
 const LOGIN_URL = BASE_URL + '/login';
+const TRANSACTIONS_URL = BASE_URL + '/transactions';
 const SPECIFIC_USER_URL = id => USERS_URL + '/' + id;
 // const TRANSACTIONS_URL = BASE_URL + '/transactions';
 
@@ -136,6 +137,18 @@ const getQuote = data => {
     .catch(error => error)
 };
 
+const newTransactionToDB = transactionObj => {
+  const config = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(transactionObj)
+  };
+  return fetch(TRANSACTIONS_URL, config)
+    .then(r => r.json())
+};
+
 export default {
   newUserToDB,
   deleteUserFromDB,
@@ -144,5 +157,6 @@ export default {
   logoutUser,
   setUserAction,
   setTransactionsAction,
-  getQuote
+  getQuote,
+  newTransactionToDB
 };
