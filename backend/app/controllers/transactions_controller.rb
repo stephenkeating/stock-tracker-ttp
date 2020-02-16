@@ -1,9 +1,10 @@
 class TransactionsController < ApplicationController
 
   def index
-    transactions = User.where(params[:user_id]).transactions
-    map = Transaction.transactions_map(transactions)
-    render json: { transactions: @transactions, transactions_map: map}
+    @user = User.find(params[:user_id])
+    @transactions = @user.transactions
+    @map = Transaction.transactions_map(@transactions)
+    render json: { transactions: @transactions, transactions_map: @map}
   end
 
   def create

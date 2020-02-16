@@ -1,9 +1,10 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import PurchaseForm from '../Components/PurchaseForm'
 
 const Home = () => {
-  const name = useSelector(state => state.user.name);
+  const user = useSelector(state => state.user);
   const balance = useSelector(state => parseFloat(state.user.balance).toFixed(2));
   const portfolio = useSelector(state => state.transactions);
   
@@ -16,8 +17,8 @@ const Home = () => {
   ) : (
     null
   );
-  
-  const rightColumn = name ? (
+
+  const rightColumn = user.name ? (
       <>
         <h3>Cash: ${balance}</h3>
         <PurchaseForm />

@@ -1,5 +1,6 @@
 // API CONSTANTS
 
+// Backend Constants
 const BASE_URL = 'http://localhost:3000';
 const USERS_URL = BASE_URL + '/users';
 const PERSIST_URL = BASE_URL + '/auth';
@@ -8,16 +9,17 @@ const TRANSACTIONS_URL = BASE_URL + '/transactions';
 const SPECIFIC_USER_URL = id => USERS_URL + '/' + id;
 // const TRANSACTIONS_URL = BASE_URL + '/transactions';
 
+// IES Sandbox constants. See console: https://iexcloud.io/console/
 const IEX_SANDBOX_API_URL = 'https://sandbox.iexapis.com/stable/'
 const IEX_SANDBOX_SECRET_TOKEN = process.env.REACT_APP_IEX_SANDBOX_SECRET_TOKEN
 const GET_QUOTE_URL = ticker => IEX_SANDBOX_API_URL + 'stock/' + ticker + '/quote?token=' + IEX_SANDBOX_SECRET_TOKEN
-
 // const IEX_TOKEN = process.env.REACT_APP_IEX_API_TOKEN
 
 // Redux Actions
 
 const setUserAction = userObj => {
-  // console.log(userObj)
+  console.log(userObj.id)
+  setPortfolio(userObj.id)
   return {
     type: 'SET_USER',
     payload: userObj
@@ -47,7 +49,7 @@ const addTransactionAction = transaction => ({
 
 // Fetch
 
-// Pattern without error Handling:
+// Pattern for new user (without error handling):
 // const newUserToDB = userObj => dispatch => {
 //   const config = {
 //     method: 'POST',
@@ -64,7 +66,7 @@ const addTransactionAction = transaction => ({
 //     });
 // };
 
-// Pattern with error Handling:
+// Pattern for new user (with error handling):
 const newUserToDB = userObj => {
   const config = {
     method: 'POST',
@@ -81,13 +83,14 @@ const deleteUserFromDB = userId => dispatch => {
   const config = {
     method: 'DELETE'
   };
-  fetch(SPECIFIC_USER_URL(userId), config).then(r => {
-    dispatch(clearUserAction());
-    localStorage.clear();
+  fetch(SPECIFIC_USER_URL(userId), config)
+    .then(r => {
+      dispatch(clearUserAction());
+      localStorage.clear();
   });
 };
 
-// Pattern without error Handling:
+// Pattern to login user (without error Handling):
 // const loginUserToDB = userCredentials => dispatch => {
 //   const config = {
 //     method: 'POST',
@@ -104,7 +107,7 @@ const deleteUserFromDB = userId => dispatch => {
 //     })
 // };
 
-// Pattern with error Handling:
+// Pattern to login (with error handling):
 const loginUserToDB = userCredentials => {
   const config = {
     method: 'POST',
@@ -155,6 +158,23 @@ const newTransactionToDB = transactionObj => {
     .then(r => r.json())
 };
 
+const setPortfolio = (user_id) => {
+  const config = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({user_id: user_id})
+  };
+  fetch(TRANSACTIONS_URL, config)
+    .then(r => r.json())
+    .then(data => {
+      console.log(data)
+      // dispatch(setUserAction(data.user));
+      // dispatch(setTransactionsAction(data.transactions));
+    });
+};
+
 export default {
   newUserToDB,
   deleteUserFromDB,
@@ -166,5 +186,6 @@ export default {
   getQuote,
   newTransactionToDB,
   updateUserBalanceAction,
-  addTransactionAction
+  addTransactionAction,
+  setPortfolio
 };
