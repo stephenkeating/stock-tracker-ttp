@@ -10,11 +10,15 @@ const initialState = {
 export default (state = initialState, { type, payload }) => {
   switch (type) {
     case 'SET_USER':
-      return {...state, user: payload}
+      return {...state, user: payload};
     case 'SET_TRANSACTIONS':
-      return {...state, transactions: payload}
+      return {...state, transactions: payload};
     case 'CLEAR_USER':
       return {...state, user: {}};
+    case 'UPDATE_USER_BALANCE':
+      return {...state, user: {...state.user, balance: payload}};
+    case 'ADD_TRANSACTION':
+      return {...state, transactions: [...state.transactions, {...payload}]};
     default:
       return state;
   }

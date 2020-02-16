@@ -35,6 +35,16 @@ const clearUserAction = () => ({
   type: 'CLEAR_USER'
 });
 
+const updateUserBalanceAction = balance => ({
+  type: 'UPDATE_USER_BALANCE',
+  payload: balance
+});
+
+const addTransactionAction = transaction => ({
+  type: 'ADD_TRANSACTION',
+  payload: transaction
+});
+
 // Fetch
 
 // Pattern without error Handling:
@@ -128,10 +138,6 @@ const logoutUser = () => dispatch => {
 };
 
 const getQuote = data => {
-  const config = {
-    method: 'GET',
-  };
-  // console.log(data);
   return fetch(GET_QUOTE_URL(data.ticker))
     .then(r => r.json())
     .catch(error => error)
@@ -158,5 +164,7 @@ export default {
   setUserAction,
   setTransactionsAction,
   getQuote,
-  newTransactionToDB
+  newTransactionToDB,
+  updateUserBalanceAction,
+  addTransactionAction
 };

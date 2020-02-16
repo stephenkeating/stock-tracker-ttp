@@ -6,7 +6,7 @@ const Home = () => {
   const name = useSelector(state => state.user.name);
   const balance = useSelector(state => parseFloat(state.user.balance).toFixed(2));
   const portfolio = useSelector(state => state.transactions);
-  console.log(portfolio)
+  
   const leftColumn = portfolio ? (
     <>
       <h1>Portfolio</h1>
@@ -16,6 +16,7 @@ const Home = () => {
   ) : (
     null
   );
+  
   const rightColumn = name ? (
       <>
         <h3>Cash: ${balance}</h3>

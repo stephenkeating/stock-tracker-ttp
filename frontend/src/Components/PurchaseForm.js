@@ -14,22 +14,19 @@ const PurchaseForm = props => {
     showQuote: false
   });
 
-  // getting user balance from redux
-  const balance = useSelector(state => parseFloat(state.user.balance));
+  // Get user and balance from redux
   const user = useSelector(state => state.user);
+  const balance = useSelector(state => parseFloat(state.user.balance));
 
   const handleQuoteSubmit = e => {
     e.preventDefault();
-    console.log(quoteForm);
     if (quoteForm.quantity > 0) {
       userActions.getQuote(quoteForm)
       .then(data => {
         if(!data.symbol) {
-          console.log(data);
           alert("Incorrect Ticker");
           return;
         } else {
-          console.log(data)
           saveQuote(data)
         };
       })
@@ -40,19 +37,24 @@ const PurchaseForm = props => {
 
   const handleBuyShares = e => {
     e.preventDefault();
-    console.log(e.target.quotePrice.value, balance);
+    
     if ( e.target.quotePrice.value > balance ) {
-      alert('Insufficient Funds')
+      alert('Insufficient Funds');
     } else {
-      console.log( quoteForm, balance, user.id );
-      // save purchase to backend, add to transactions in state or re-fetch state
+      // Save purchase to backend
       userActions.newTransactionToDB({ticker: quoteForm.ticker, quantity: quoteForm.quantity, price: quoteForm.price, user_id: user.id.toString()})
       .then (data => {
-        // need to update user balance and portfolio
-        console.log(data)
+        // Update user balance, transactions, and portfolio
+        setQuoteForm({ticker: '', quantity: 0, price: 0, showQuote: false});
+        dispatch(userActions.updateUserBalanceAction(data.balance));
+        dispatch(userActions.addTransactionAction({
+          id: data.transaction.id, 
+          price: data.transaction.price, 
+          quantity: data.transaction.quantity, 
+          ticker: data.transaction.ticker, 
+          user_id: data.transaction.user_id
+        }));
       })
-      // clear form
-
     }
   }
 
