@@ -48,6 +48,7 @@ const PurchaseForm = props => {
       // save purchase to backend, add to transactions in state or re-fetch state
       userActions.newTransactionToDB({ticker: quoteForm.ticker, quantity: quoteForm.quantity, price: quoteForm.price, user_id: user.id.toString()})
       .then (data => {
+        // need to update user balance and portfolio
         console.log(data)
       })
       // clear form
