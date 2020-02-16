@@ -1,6 +1,6 @@
 class TransactionsController < ApplicationController
 
-  def index
+  def shares
     @user = User.find(params[:user_id])
     @transactions = @user.transactions
     @map = Transaction.transactions_map(@transactions)

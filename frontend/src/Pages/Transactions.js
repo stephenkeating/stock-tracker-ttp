@@ -12,7 +12,7 @@ const Transactions = () => {
   const portfolio = useSelector(state => state.transactions);
   // console.log(portfolio);
 
-  
+  console.log(portfolio)
 
   const leftColumn = portfolio ? (
     <>

@@ -6,6 +6,7 @@ const USERS_URL = BASE_URL + '/users';
 const PERSIST_URL = BASE_URL + '/auth';
 const LOGIN_URL = BASE_URL + '/login';
 const TRANSACTIONS_URL = BASE_URL + '/transactions';
+const SHARES_URL = BASE_URL + '/shares';
 const SPECIFIC_USER_URL = id => USERS_URL + '/' + id;
 // const TRANSACTIONS_URL = BASE_URL + '/transactions';
 
@@ -68,6 +69,7 @@ const addTransactionAction = transaction => ({
 
 // Pattern for new user (with error handling):
 const newUserToDB = userObj => {
+  console.log(userObj)
   const config = {
     method: 'POST',
     headers: {
@@ -166,7 +168,7 @@ const setPortfolio = (user_id) => {
     },
     body: JSON.stringify({user_id: user_id})
   };
-  fetch(TRANSACTIONS_URL, config)
+  fetch(SHARES_URL, config)
     .then(r => r.json())
     .then(data => {
       console.log(data)

@@ -42,9 +42,10 @@ const PurchaseForm = props => {
       alert('Insufficient Funds');
     } else {
       // Save purchase to backend
-      userActions.newTransactionToDB({ticker: quoteForm.ticker, quantity: quoteForm.quantity, price: quoteForm.price, user_id: user.id.toString()})
+      userActions.newTransactionToDB({ticker: quoteForm.ticker, quantity: quoteForm.quantity, price: quoteForm.price, user_id: user.id})
       .then (data => {
         // Update user balance, transactions, and portfolio
+        console.log(data)
         setQuoteForm({ticker: '', quantity: 0, price: 0, showQuote: false});
         dispatch(userActions.updateUserBalanceAction(data.balance));
         dispatch(userActions.addTransactionAction({
