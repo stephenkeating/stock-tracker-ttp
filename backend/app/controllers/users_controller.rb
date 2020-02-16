@@ -2,7 +2,8 @@ class UsersController < ApplicationController
 
   def show
       user = User.find(params[:id])
-      render json: {user: user, transactions: user.transactions}
+      shares_map = Transaction.all.shares_map(user.transactions)
+      render json: {user: user, transactions: user.transactions, shares_map: shares_map}
   end
 
   def create
@@ -10,7 +11,8 @@ class UsersController < ApplicationController
       if user.valid?
           user = user
           token = JWT.encode({user_id: user.id}, secret, 'HS256')
-          render json: {user: user, token: token, transactions: user.transactions}
+          shares_map = Transaction.all.shares_map(user.transactions)
+          render json: {user: user, token: token, transactions: user.transactions, shares_map: shares_map}
       else
           render json: {errors: user.errors.full_messages}
       end

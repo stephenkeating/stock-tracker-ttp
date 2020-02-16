@@ -19,8 +19,6 @@ const GET_QUOTE_URL = ticker => IEX_SANDBOX_API_URL + 'stock/' + ticker + '/quot
 // Redux Actions
 
 const setUserAction = userObj => {
-  console.log(userObj.id)
-  setPortfolio(userObj.id)
   return {
     type: 'SET_USER',
     payload: userObj
@@ -47,6 +45,13 @@ const addTransactionAction = transaction => ({
   type: 'ADD_TRANSACTION',
   payload: transaction
 });
+
+const setPortfolioAction = portfolioObj => {
+  return {
+    type: 'SET_PORTFOLIO',
+    payload: portfolioObj
+  }
+};
 
 // Fetch
 
@@ -134,6 +139,7 @@ const persistUser = () => dispatch => {
     .then(data => {
       dispatch(setUserAction(data.user));
       dispatch(setTransactionsAction(data.transactions));
+      dispatch(setPortfolioAction(data.shares_map));
     });
 };
 
@@ -160,22 +166,23 @@ const newTransactionToDB = transactionObj => {
     .then(r => r.json())
 };
 
-const setPortfolio = (user_id) => {
-  const config = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({user_id: user_id})
-  };
-  fetch(SHARES_URL, config)
-    .then(r => r.json())
-    .then(data => {
-      console.log(data)
-      // dispatch(setUserAction(data.user));
-      // dispatch(setTransactionsAction(data.transactions));
-    });
-};
+// const setPortfolio = user_id => dispatch => {
+//   console.log('hello from setPortfolio')
+//   const config = {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({user_id: user_id})
+//   };
+//   fetch(SHARES_URL, config)
+//     .then(r => r.json())
+//     .then(data => {
+//       console.log(data)
+//       dispatch(setPortfolioAction(data.shares_map));
+//       // dispatch(setTransactionsAction(data.transactions));
+//     });
+// };
 
 export default {
   newUserToDB,
@@ -188,6 +195,5 @@ export default {
   getQuote,
   newTransactionToDB,
   updateUserBalanceAction,
-  addTransactionAction,
-  setPortfolio
+  addTransactionAction
 };

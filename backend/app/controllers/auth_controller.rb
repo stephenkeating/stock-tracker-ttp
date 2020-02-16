@@ -4,16 +4,17 @@
 
 class AuthController < ApplicationController
     
-  def login
-      user = User.find_by(email: login_params[:email])
-      if user && user.authenticate(login_params[:password])
-           token = JWT.encode({user_id: user.id}, secret, 'HS256')
-          render json: {user: user, token: token, transactions: user.transactions}
-      else
-        #   render json: {errors: user.errors.full_messages}
-          render json: {errors: "Could Not Login"}
-      end
-  end
+    def login
+        user = User.find_by(email: login_params[:email])
+        if user && user.authenticate(login_params[:password])
+            token = JWT.encode({user_id: user.id}, secret, 'HS256')
+            shares_map = Transaction.all.shares_map(user.transactions)
+            render json: {user: user, token: token, transactions: user.transactions, shares_map: shares_map}
+        else
+            #   render json: {errors: user.errors.full_messages}
+            render json: {errors: "Could Not Login"}
+        end
+    end
 
   def persist
       if request.headers['Authorization']
@@ -21,7 +22,8 @@ class AuthController < ApplicationController
           token = JWT.decode(encoded_token, secret)
           user_id = token[0]['user_id']
           user = User.find(user_id)
-          render json: {user: user, transactions: user.transactions}
+          shares_map = Transaction.all.shares_map(user.transactions)
+          render json: {user: user, transactions: user.transactions, shares_map: shares_map}
       end
   end
 

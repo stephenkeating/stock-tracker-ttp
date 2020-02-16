@@ -7146,3 +7146,597 @@ Processing by TransactionsController#shares as */*
 Completed 200 OK in 37ms (Views: 10.7ms | ActiveRecord: 8.5ms | Allocations: 6782)
 
 
+Started GET "/auth" for ::1 at 2020-02-16 14:48:10 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (10.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (15.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 56ms (Views: 14.2ms | ActiveRecord: 25.8ms | Allocations: 7114)
+
+
+Started POST "/shares" for ::1 at 2020-02-16 14:48:10 -0500
+Processing by TransactionsController#shares as */*
+  Parameters: {"user_id"=>5, "transaction"=>{"user_id"=>5}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:4:in `shares'
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/models/transaction.rb:6:in `transactions_map'
+Completed 200 OK in 13ms (Views: 6.2ms | ActiveRecord: 1.1ms | Allocations: 6779)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 14:48:50 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 16ms (Views: 13.1ms | ActiveRecord: 1.2ms | Allocations: 7110)
+
+
+Started POST "/shares" for ::1 at 2020-02-16 14:48:50 -0500
+Processing by TransactionsController#shares as */*
+  Parameters: {"user_id"=>5, "transaction"=>{"user_id"=>5}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:4:in `shares'
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/models/transaction.rb:6:in `transactions_map'
+Completed 200 OK in 11ms (Views: 4.3ms | ActiveRecord: 0.9ms | Allocations: 6779)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 14:49:08 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.9ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 20ms (Views: 16.0ms | ActiveRecord: 1.4ms | Allocations: 7110)
+
+
+Started POST "/shares" for ::1 at 2020-02-16 14:49:09 -0500
+Processing by TransactionsController#shares as */*
+  Parameters: {"user_id"=>5, "transaction"=>{"user_id"=>5}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:4:in `shares'
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/models/transaction.rb:6:in `transactions_map'
+Completed 200 OK in 13ms (Views: 5.8ms | ActiveRecord: 0.6ms | Allocations: 6779)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 14:50:34 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 98ms (Views: 27.7ms | ActiveRecord: 33.2ms | Allocations: 17585)
+
+
+Started POST "/shares" for ::1 at 2020-02-16 14:50:34 -0500
+Processing by TransactionsController#shares as */*
+  Parameters: {"user_id"=>5, "transaction"=>{"user_id"=>5}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:4:in `shares'
+  [1m[36mTransaction Load (4.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/models/transaction.rb:6:in `shares_map'
+Completed 200 OK in 23ms (Views: 11.1ms | ActiveRecord: 4.9ms | Allocations: 6794)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 14:52:02 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 90ms (Views: 83.4ms | ActiveRecord: 1.2ms | Allocations: 7113)
+
+
+Started POST "/shares" for ::1 at 2020-02-16 14:52:02 -0500
+Processing by TransactionsController#shares as */*
+  Parameters: {"user_id"=>5, "transaction"=>{"user_id"=>5}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:4:in `shares'
+  [1m[36mTransaction Load (1.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/models/transaction.rb:6:in `shares_map'
+Completed 200 OK in 17ms (Views: 9.4ms | ActiveRecord: 1.6ms | Allocations: 6779)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 14:52:16 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (1.1ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 16ms (Views: 12.8ms | ActiveRecord: 1.5ms | Allocations: 7110)
+
+
+Started POST "/shares" for ::1 at 2020-02-16 14:52:16 -0500
+Processing by TransactionsController#shares as */*
+  Parameters: {"user_id"=>5, "transaction"=>{"user_id"=>5}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:4:in `shares'
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/models/transaction.rb:6:in `shares_map'
+Completed 200 OK in 16ms (Views: 6.2ms | ActiveRecord: 0.9ms | Allocations: 6779)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 14:53:55 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 17ms (Views: 13.8ms | ActiveRecord: 1.3ms | Allocations: 7110)
+
+
+Started POST "/shares" for ::1 at 2020-02-16 14:53:55 -0500
+Processing by TransactionsController#shares as */*
+  Parameters: {"user_id"=>5, "transaction"=>{"user_id"=>5}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:4:in `shares'
+  [1m[36mTransaction Load (0.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/models/transaction.rb:6:in `shares_map'
+Completed 200 OK in 15ms (Views: 7.2ms | ActiveRecord: 1.0ms | Allocations: 6779)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 14:59:59 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (1.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 21ms (Views: 12.2ms | ActiveRecord: 3.5ms | Allocations: 7230)
+
+
+Started POST "/transactions" for ::1 at 2020-02-16 15:00:25 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"IBM", "quantity"=>1, "price"=>155, "user_id"=>5, "transaction"=>{"price"=>155, "quantity"=>1, "ticker"=>"IBM", "user_id"=>5}}
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:11:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:11:in `create'
+  [1m[36mTransaction Create (1.1ms)[0m  [1m[32mINSERT INTO "transactions" ("price", "quantity", "ticker", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["price", "155.0"], ["quantity", 1], ["ticker", "IBM"], ["user_id", 5], ["created_at", "2020-02-16 20:00:25.378349"], ["updated_at", "2020-02-16 20:00:25.378349"]]
+  ↳ app/controllers/transactions_controller.rb:11:in `create'
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:11:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:12:in `create'
+[31mUnpermitted parameter: :transaction[0m
+[31mUnpermitted parameter: :transaction[0m
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test@test.com"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", "1218.19"], ["updated_at", "2020-02-16 20:00:25.389396"], ["id", 5]]
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+[31mUnpermitted parameter: :transaction[0m
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."ticker" = $2[0m  [["user_id", 5], ["ticker", "IBM"]]
+  ↳ app/models/transaction.rb:17:in `map'
+[31mUnpermitted parameter: :transaction[0m
+Completed 200 OK in 22ms (Views: 0.3ms | ActiveRecord: 6.4ms | Allocations: 9036)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:01:01 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.9ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 37ms (Views: 32.7ms | ActiveRecord: 1.7ms | Allocations: 7252)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:01:04 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 24ms (Views: 19.9ms | ActiveRecord: 1.5ms | Allocations: 7249)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:01:48 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 22ms (Views: 16.4ms | ActiveRecord: 1.3ms | Allocations: 7249)
+
+
+Started POST "/transactions" for ::1 at 2020-02-16 15:01:58 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"IBM", "quantity"=>1, "price"=>153.4, "user_id"=>5, "transaction"=>{"price"=>153.4, "quantity"=>1, "ticker"=>"IBM", "user_id"=>5}}
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:11:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:11:in `create'
+  [1m[36mTransaction Create (1.6ms)[0m  [1m[32mINSERT INTO "transactions" ("price", "quantity", "ticker", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["price", "153.4"], ["quantity", 1], ["ticker", "IBM"], ["user_id", 5], ["created_at", "2020-02-16 20:01:58.318554"], ["updated_at", "2020-02-16 20:01:58.318554"]]
+  ↳ app/controllers/transactions_controller.rb:11:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:11:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:12:in `create'
+[31mUnpermitted parameter: :transaction[0m
+[31mUnpermitted parameter: :transaction[0m
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test@test.com"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", "1064.79"], ["updated_at", "2020-02-16 20:01:58.329841"], ["id", 5]]
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+[31mUnpermitted parameter: :transaction[0m
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."ticker" = $2[0m  [["user_id", 5], ["ticker", "IBM"]]
+  ↳ app/models/transaction.rb:17:in `map'
+[31mUnpermitted parameter: :transaction[0m
+Completed 200 OK in 20ms (Views: 0.4ms | ActiveRecord: 5.6ms | Allocations: 8679)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:02:05 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 17ms (Views: 13.7ms | ActiveRecord: 1.3ms | Allocations: 7388)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:03:13 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (2.1ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 26ms (Views: 21.4ms | ActiveRecord: 2.6ms | Allocations: 7388)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:03:16 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 24ms (Views: 17.4ms | ActiveRecord: 1.3ms | Allocations: 7388)
+
+
+Started POST "/transactions" for ::1 at 2020-02-16 15:03:19 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"AAPL", "quantity"=>1, "price"=>338.04, "user_id"=>5, "transaction"=>{"price"=>338.04, "quantity"=>1, "ticker"=>"AAPL", "user_id"=>5}}
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:11:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:11:in `create'
+  [1m[36mTransaction Create (0.6ms)[0m  [1m[32mINSERT INTO "transactions" ("price", "quantity", "ticker", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["price", "338.04"], ["quantity", 1], ["ticker", "AAPL"], ["user_id", 5], ["created_at", "2020-02-16 20:03:19.860918"], ["updated_at", "2020-02-16 20:03:19.860918"]]
+  ↳ app/controllers/transactions_controller.rb:11:in `create'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:11:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:12:in `create'
+[31mUnpermitted parameter: :transaction[0m
+[31mUnpermitted parameter: :transaction[0m
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test@test.com"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", "726.75"], ["updated_at", "2020-02-16 20:03:19.869001"], ["id", 5]]
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+[31mUnpermitted parameter: :transaction[0m
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."ticker" = $2[0m  [["user_id", 5], ["ticker", "AAPL"]]
+  ↳ app/models/transaction.rb:17:in `map'
+[31mUnpermitted parameter: :transaction[0m
+Completed 200 OK in 19ms (Views: 0.4ms | ActiveRecord: 4.1ms | Allocations: 8678)
+
+
+Started POST "/login" for ::1 at 2020-02-16 15:03:28 -0500
+Processing by AuthController#login as */*
+  Parameters: {"email"=>"test@test.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"test@test.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:11:in `login'
+Completed 200 OK in 258ms (Views: 7.8ms | ActiveRecord: 0.7ms | Allocations: 7805)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:03:36 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 25ms (Views: 20.4ms | ActiveRecord: 1.0ms | Allocations: 7528)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:03:54 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 23ms (Views: 19.0ms | ActiveRecord: 1.7ms | Allocations: 7527)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:03:58 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 25ms (Views: 20.8ms | ActiveRecord: 1.1ms | Allocations: 7527)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:04:05 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 0.9ms | Allocations: 7527)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:04:20 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 15ms (Views: 10.8ms | ActiveRecord: 1.3ms | Allocations: 7527)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:04:30 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 27ms (Views: 22.8ms | ActiveRecord: 1.1ms | Allocations: 7527)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:06:13 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 0.9ms | Allocations: 7527)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:06:55 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.9ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 21ms (Views: 16.9ms | ActiveRecord: 1.5ms | Allocations: 7527)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:07:11 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 104ms (Views: 101.2ms | ActiveRecord: 1.2ms | Allocations: 7530)
+
+
+Started POST "/shares" for ::1 at 2020-02-16 15:07:11 -0500
+Processing by TransactionsController#shares as */*
+  Parameters: {"user_id"=>5, "transaction"=>{"user_id"=>5}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:4:in `shares'
+  [1m[36mTransaction Load (0.9ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/models/transaction.rb:6:in `shares_map'
+Completed 200 OK in 54ms (Views: 10.6ms | ActiveRecord: 1.1ms | Allocations: 7199)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:07:44 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 17ms (Views: 13.6ms | ActiveRecord: 1.0ms | Allocations: 7527)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:19:09 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (1.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 17ms (Views: 11.0ms | ActiveRecord: 2.6ms | Allocations: 7647)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTransaction Load (1.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+Started GET "/auth" for ::1 at 2020-02-16 15:23:40 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.9ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 58ms (Views: 27.6ms | ActiveRecord: 16.3ms | Allocations: 17906)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:24:33 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+Completed 200 OK in 66ms (Views: 12.5ms | ActiveRecord: 20.7ms | Allocations: 17818)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:25:05 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (4.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/models/transaction.rb:6:in `shares_map'
+Completed 200 OK in 123ms (Views: 7.6ms | ActiveRecord: 26.1ms | Allocations: 17630)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:25:33 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:23:in `persist'
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/models/transaction.rb:6:in `shares_map'
+Completed 200 OK in 54ms (Views: 4.6ms | ActiveRecord: 12.7ms | Allocations: 21137)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:27:00 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/models/transaction.rb:6:in `shares_map'
+Completed 200 OK in 92ms (Views: 12.6ms | ActiveRecord: 15.7ms | Allocations: 17614)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:28:13 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+  [1m[36mTransaction Load (0.9ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/models/transaction.rb:6:in `shares_map'
+Completed 200 OK in 76ms (Views: 67.1ms | ActiveRecord: 1.4ms | Allocations: 7479)
+
+
+Started POST "/login" for ::1 at 2020-02-16 15:28:22 -0500
+Processing by AuthController#login as */*
+  Parameters: {"email"=>"test@test.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"test@test.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:8:in `login'
+[31mUnpermitted parameter: :auth[0m
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/models/transaction.rb:6:in `shares_map'
+Completed 200 OK in 256ms (Views: 4.1ms | ActiveRecord: 0.8ms | Allocations: 7762)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:31:20 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+  [1m[36mTransaction Load (0.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/models/transaction.rb:6:in `shares_map'
+Completed 200 OK in 18ms (Views: 9.3ms | ActiveRecord: 1.4ms | Allocations: 7456)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:31:45 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+  [1m[36mTransaction Load (0.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/models/transaction.rb:6:in `shares_map'
+Completed 200 OK in 21ms (Views: 12.0ms | ActiveRecord: 2.1ms | Allocations: 7456)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:32:53 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+  [1m[36mTransaction Load (1.0ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/models/transaction.rb:6:in `shares_map'
+Completed 200 OK in 18ms (Views: 8.8ms | ActiveRecord: 1.6ms | Allocations: 7456)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:33:00 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+  [1m[36mTransaction Load (1.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/models/transaction.rb:6:in `shares_map'
+Completed 200 OK in 21ms (Views: 10.6ms | ActiveRecord: 2.1ms | Allocations: 7456)
+
+
+Started POST "/transactions" for ::1 at 2020-02-16 15:33:23 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"AAPL", "quantity"=>1, "price"=>326, "user_id"=>5, "transaction"=>{"price"=>326, "quantity"=>1, "ticker"=>"AAPL", "user_id"=>5}}
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:11:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:11:in `create'
+  [1m[36mTransaction Create (0.9ms)[0m  [1m[32mINSERT INTO "transactions" ("price", "quantity", "ticker", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["price", "326.0"], ["quantity", 1], ["ticker", "AAPL"], ["user_id", 5], ["created_at", "2020-02-16 20:33:23.949942"], ["updated_at", "2020-02-16 20:33:23.949942"]]
+  ↳ app/controllers/transactions_controller.rb:11:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:11:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:12:in `create'
+[31mUnpermitted parameter: :transaction[0m
+[31mUnpermitted parameter: :transaction[0m
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test@test.com"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", "400.75"], ["updated_at", "2020-02-16 20:33:23.958903"], ["id", 5]]
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+[31mUnpermitted parameter: :transaction[0m
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."ticker" = $2[0m  [["user_id", 5], ["ticker", "AAPL"]]
+  ↳ app/models/transaction.rb:17:in `map'
+[31mUnpermitted parameter: :transaction[0m
+Completed 200 OK in 20ms (Views: 0.3ms | ActiveRecord: 4.4ms | Allocations: 9339)
+
+
+Started POST "/transactions" for ::1 at 2020-02-16 15:33:40 -0500
+Processing by TransactionsController#create as */*
+  Parameters: {"ticker"=>"IBM", "quantity"=>1, "price"=>151, "user_id"=>5, "transaction"=>{"price"=>151, "quantity"=>1, "ticker"=>"IBM", "user_id"=>5}}
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/transactions_controller.rb:11:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:11:in `create'
+  [1m[36mTransaction Create (0.8ms)[0m  [1m[32mINSERT INTO "transactions" ("price", "quantity", "ticker", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["price", "151.0"], ["quantity", 1], ["ticker", "IBM"], ["user_id", 5], ["created_at", "2020-02-16 20:33:40.478956"], ["updated_at", "2020-02-16 20:33:40.478956"]]
+  ↳ app/controllers/transactions_controller.rb:11:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/transactions_controller.rb:11:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/transactions_controller.rb:12:in `create'
+[31mUnpermitted parameter: :transaction[0m
+[31mUnpermitted parameter: :transaction[0m
+[31mUnpermitted parameter: :transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test@test.com"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "balance" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["balance", "249.75"], ["updated_at", "2020-02-16 20:33:40.488815"], ["id", 5]]
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:15:in `stock_withdraw'
+[31mUnpermitted parameter: :transaction[0m
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1 AND "transactions"."ticker" = $2[0m  [["user_id", 5], ["ticker", "IBM"]]
+  ↳ app/models/transaction.rb:17:in `map'
+[31mUnpermitted parameter: :transaction[0m
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 4.7ms | Allocations: 8690)
+
+
+Started GET "/auth" for ::1 at 2020-02-16 15:33:47 -0500
+Processing by AuthController#persist as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:24:in `persist'
+  [1m[36mTransaction Load (0.5ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/models/transaction.rb:6:in `shares_map'
+Completed 200 OK in 12ms (Views: 6.6ms | ActiveRecord: 0.9ms | Allocations: 7732)
+
+

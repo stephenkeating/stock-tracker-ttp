@@ -9,16 +9,21 @@ const pluralize = (quantity) => {
 const Transactions = () => {
   // const name = useSelector(state => state.user.name);
   // const balance = useSelector(state => state.user.balance);
-  const portfolio = useSelector(state => state.transactions);
-  // console.log(portfolio);
+  const transactions = useSelector(state => state.transactions);
 
-  console.log(portfolio)
+  console.log(transactions);
 
-  const leftColumn = portfolio ? (
+  const leftColumn = transactions ? (
     <>
       <h2>Transactions</h2>
-        {portfolio.map((transaction, i) =>
-          <Transaction key={i} ticker={transaction.ticker} quantity={transaction.quantity} price={transaction.price * transaction.quantity} pluralize={pluralize}/>)}
+        {transactions.map((transaction, i) =>
+          <Transaction 
+            key={i} 
+            ticker={transaction.ticker} 
+            quantity={transaction.quantity} 
+            price={transaction.price * transaction.quantity} 
+            pluralize={pluralize}
+          />)}
     </>
   ) : (
     <>

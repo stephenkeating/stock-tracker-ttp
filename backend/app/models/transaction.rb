@@ -1,7 +1,7 @@
 class Transaction < ApplicationRecord
   belongs_to :user
 
-  def self.transactions_map(transactions)
+  def self.shares_map(transactions)
     map = {}
     transactions.each do |t|
       if map[t.ticker]

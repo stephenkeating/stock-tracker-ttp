@@ -3,8 +3,8 @@ class TransactionsController < ApplicationController
   def shares
     @user = User.find(params[:user_id])
     @transactions = @user.transactions
-    @map = Transaction.transactions_map(@transactions)
-    render json: { transactions: @transactions, transactions_map: @map}
+    @map = Transaction.shares_map(@transactions)
+    render json: { transactions: @transactions, shares_map: @map}
   end
 
   def create

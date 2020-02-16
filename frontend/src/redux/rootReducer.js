@@ -4,7 +4,8 @@
 
 const initialState = {
   user: {},
-  transactions: []
+  transactions: [],
+  portfolio: {}
 }
 
 export default (state = initialState, { type, payload }) => {
@@ -13,6 +14,8 @@ export default (state = initialState, { type, payload }) => {
       return {...state, user: payload};
     case 'SET_TRANSACTIONS':
       return {...state, transactions: payload};
+    case 'SET_PORTFOLIO':
+      return {...state, portfolio: payload};
     case 'CLEAR_USER':
       return {...state, user: {}};
     case 'UPDATE_USER_BALANCE':

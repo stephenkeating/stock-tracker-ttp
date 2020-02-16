@@ -38,6 +38,7 @@ const Signup = props => {
         console.log(data)
         dispatch(userActions.setUserAction(data.user));
         dispatch(userActions.setTransactionsAction(data.transactions));
+        dispatch(userActions.setPortfolioAction(data.shares_map));
         localStorage.setItem('token', data.token);
         history.push('/');
     }
