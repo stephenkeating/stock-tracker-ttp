@@ -5,7 +5,8 @@
 const initialState = {
   user: {},
   transactions: [],
-  portfolio: {}
+  portfolio: {},
+  portfolioValue: 0
 }
 
 export default (state = initialState, { type, payload }) => {
@@ -22,6 +23,19 @@ export default (state = initialState, { type, payload }) => {
       return {...state, user: {...state.user, balance: payload}};
     case 'ADD_TRANSACTION':
       return {...state, transactions: [...state.transactions, {...payload}]};
+    case 'ADD_SHARE_TO_PORTFOLIO':
+      let updatedStock = {}
+      updatedStock[payload.ticker] = {quantity: payload.quantity}
+      return {...state,
+              portfolio: {
+                ...state.portfolio,
+                ...updatedStock
+              }
+      }
+    case 'UPDATE_PORTFOLIO_VALUE':
+      let currentValue = state.portfolioValue
+      let newValue = currentValue + payload
+      return {...state, portfolioValue: newValue};
     default:
       return state;
   }

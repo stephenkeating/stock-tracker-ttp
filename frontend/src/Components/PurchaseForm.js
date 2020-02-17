@@ -21,7 +21,7 @@ const PurchaseForm = props => {
   const handleQuoteSubmit = e => {
     e.preventDefault();
     if (quoteForm.quantity > 0) {
-      userActions.getQuote(quoteForm)
+      userActions.getQuote(quoteForm.ticker)
       .then(data => {
         if(!data.symbol) {
           alert("Incorrect Ticker");
@@ -45,7 +45,7 @@ const PurchaseForm = props => {
       userActions.newTransactionToDB({ticker: quoteForm.ticker, quantity: quoteForm.quantity, price: quoteForm.price, user_id: user.id})
       .then (data => {
         // Update user balance, transactions, and portfolio
-        console.log(data)
+        // console.log(data)
         setQuoteForm({ticker: '', quantity: 0, price: 0, showQuote: false});
         dispatch(userActions.updateUserBalanceAction(data.balance));
         dispatch(userActions.addTransactionAction({
@@ -55,6 +55,7 @@ const PurchaseForm = props => {
           ticker: data.transaction.ticker, 
           user_id: data.transaction.user_id
         }));
+        dispatch(userActions.addShareToPortfolio(data.ticker, data.ticker_shares));
       })
     }
   }
@@ -68,7 +69,7 @@ const PurchaseForm = props => {
   const handleQuantityChange = e =>
     setQuoteForm({ ...quoteForm, [e.target.name]: Math.round(e.target.value), showQuote: false });
 
-  // Destructuring keys from our local state to use in the form
+  // Destructuring keys from local state to use in the form
   const { ticker, quantity, showQuote, price } = quoteForm;
 
   // Component code

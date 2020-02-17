@@ -6,7 +6,7 @@ const USERS_URL = BASE_URL + '/users';
 const PERSIST_URL = BASE_URL + '/auth';
 const LOGIN_URL = BASE_URL + '/login';
 const TRANSACTIONS_URL = BASE_URL + '/transactions';
-const SHARES_URL = BASE_URL + '/shares';
+// const SHARES_URL = BASE_URL + '/shares';
 const SPECIFIC_USER_URL = id => USERS_URL + '/' + id;
 // const TRANSACTIONS_URL = BASE_URL + '/transactions';
 
@@ -18,6 +18,7 @@ const GET_QUOTE_URL = ticker => IEX_SANDBOX_API_URL + 'stock/' + ticker + '/quot
 
 // Redux Actions
 
+// refactor setUserAction, setTransactionsAction, and setPortfolioAction
 const setUserAction = userObj => {
   return {
     type: 'SET_USER',
@@ -53,6 +54,21 @@ const setPortfolioAction = portfolioObj => {
   }
 };
 
+const addShareToPortfolio = (ticker, quantity) => {
+  return {
+    type: 'ADD_SHARE_TO_PORTFOLIO',
+    payload: {ticker, quantity}
+  }
+};
+
+const updatePortfolioValue = value => {
+  console.log(value)
+  return {
+    type: 'UPDATE_PORTFOLIO_VALUE',
+    payload: value
+  }
+};
+
 // Fetch
 
 // Pattern for new user (without error handling):
@@ -74,7 +90,7 @@ const setPortfolioAction = portfolioObj => {
 
 // Pattern for new user (with error handling):
 const newUserToDB = userObj => {
-  console.log(userObj)
+  // console.log(userObj)
   const config = {
     method: 'POST',
     headers: {
@@ -148,8 +164,8 @@ const logoutUser = () => dispatch => {
   localStorage.clear();
 };
 
-const getQuote = data => {
-  return fetch(GET_QUOTE_URL(data.ticker))
+const getQuote = ticker => {
+  return fetch(GET_QUOTE_URL(ticker))
     .then(r => r.json())
     .catch(error => error)
 };
@@ -195,5 +211,8 @@ export default {
   getQuote,
   newTransactionToDB,
   updateUserBalanceAction,
-  addTransactionAction
+  addTransactionAction,
+  setPortfolioAction,
+  addShareToPortfolio,
+  updatePortfolioValue
 };

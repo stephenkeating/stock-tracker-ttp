@@ -11,8 +11,6 @@ const Transactions = () => {
   // const balance = useSelector(state => state.user.balance);
   const transactions = useSelector(state => state.transactions);
 
-  console.log(transactions);
-
   const leftColumn = transactions ? (
     <>
       <h2>Transactions</h2>
