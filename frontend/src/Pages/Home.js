@@ -6,9 +6,9 @@ import Stock from '../Components/Stock'
 
 const Home = () => {
   const user = useSelector(state => state.user);
-  const balance = useSelector(state => +parseFloat(state.user.balance).toFixed(2));
+  const balance = useSelector(state => parseFloat(state.user.balance).toFixed(2));
   const portfolio = useSelector(state => Object.entries(state.portfolio));
-  const portfolioValue = useSelector(state => parseFloat(state.portfolioValue));
+  const portfolioValue = useSelector(state => parseFloat(state.portfolioValue).toFixed(2));
 
   const leftColumn = user.name ? (
     <>

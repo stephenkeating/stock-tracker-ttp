@@ -18,7 +18,7 @@ const Stock = props => {
     userActions.getQuote(ticker)
       .then(data => {
         setStock({...stock, latestPrice: data.latestPrice, open: data.open})
-        dispatch(userActions.updatePortfolioValue(+parseFloat(data.latestPrice * props.quantity).toFixed(2)))
+        dispatch(userActions.updatePortfolioValue(data.latestPrice * props.quantity))
     })
   }, [props.quantity])
 
@@ -49,7 +49,7 @@ const Stock = props => {
   return (
     <div className="stock" >
       <div className={stockColor()}>
-        {ticker} –– {stateQuantity} {pluralize(stateQuantity)} –– ${+parseFloat(latestPrice * stateQuantity).toFixed(2)}
+        {ticker} –– {stateQuantity} {pluralize(stateQuantity)} –– ${parseFloat(latestPrice * stateQuantity).toFixed(2)}
       </div>
     </div>
   )
