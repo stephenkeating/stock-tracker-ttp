@@ -35,7 +35,7 @@ const Signup = props => {
           alert(data.errors);
           return;
         } else {
-        console.log(data)
+        // console.log(data)
         dispatch(userActions.setUserAction(data.user));
         dispatch(userActions.setTransactionsAction(data.transactions));
         dispatch(userActions.setPortfolioAction(data.shares_map));

@@ -17,8 +17,10 @@ const Stock = props => {
   useEffect(() => {
     userActions.getQuote(ticker)
       .then(data => {
-        setStock({...stock, latestPrice: data.latestPrice, open: data.open})
-        dispatch(userActions.updatePortfolioValue(data.latestPrice * props.quantity))
+        // getting IEX data. if there is no open price, setting open to latestPrice
+        setStock({...stock, latestPrice: data.latestPrice, open: data.open || data.latestPrice})
+        // updating redux state with values from IEX
+        dispatch(userActions.setShareValue(data.symbol, data.latestPrice, data.open))
     })
   }, [props.quantity])
 

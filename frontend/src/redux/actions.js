@@ -6,15 +6,12 @@ const USERS_URL = BASE_URL + '/users';
 const PERSIST_URL = BASE_URL + '/auth';
 const LOGIN_URL = BASE_URL + '/login';
 const TRANSACTIONS_URL = BASE_URL + '/transactions';
-// const SHARES_URL = BASE_URL + '/shares';
 const SPECIFIC_USER_URL = id => USERS_URL + '/' + id;
-// const TRANSACTIONS_URL = BASE_URL + '/transactions';
 
-// IES Sandbox constants. See console: https://iexcloud.io/console/
+// IEX Sandbox constants. See console: https://iexcloud.io/console/
 const IEX_SANDBOX_API_URL = 'https://sandbox.iexapis.com/stable/'
 const IEX_SANDBOX_SECRET_TOKEN = process.env.REACT_APP_IEX_SANDBOX_SECRET_TOKEN
 const GET_QUOTE_URL = ticker => IEX_SANDBOX_API_URL + 'stock/' + ticker + '/quote?token=' + IEX_SANDBOX_SECRET_TOKEN
-// const IEX_TOKEN = process.env.REACT_APP_IEX_API_TOKEN
 
 // Redux Actions
 
@@ -61,11 +58,10 @@ const addShareToPortfolio = (ticker, quantity) => {
   }
 };
 
-const updatePortfolioValue = value => {
-  console.log(value)
+const setShareValue = (ticker, latestPrice, open) => {
   return {
-    type: 'UPDATE_PORTFOLIO_VALUE',
-    payload: value
+    type: 'SET_SHARE_VALUE',
+    payload: {ticker, latestPrice, open}
   }
 };
 
@@ -182,24 +178,6 @@ const newTransactionToDB = transactionObj => {
     .then(r => r.json())
 };
 
-// const setPortfolio = user_id => dispatch => {
-//   console.log('hello from setPortfolio')
-//   const config = {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify({user_id: user_id})
-//   };
-//   fetch(SHARES_URL, config)
-//     .then(r => r.json())
-//     .then(data => {
-//       console.log(data)
-//       dispatch(setPortfolioAction(data.shares_map));
-//       // dispatch(setTransactionsAction(data.transactions));
-//     });
-// };
-
 export default {
   newUserToDB,
   deleteUserFromDB,
@@ -214,5 +192,5 @@ export default {
   addTransactionAction,
   setPortfolioAction,
   addShareToPortfolio,
-  updatePortfolioValue
+  setShareValue
 };

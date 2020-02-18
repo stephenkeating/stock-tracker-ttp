@@ -99,7 +99,7 @@ const PurchaseForm = props => {
               type="number"
               name="quotePrice"
               readOnly
-              value={(price * quantity)}
+              value={(price * quantity).toFixed(2)}
             />
             <input type="submit" value='Buy Shares'/>
           </form>

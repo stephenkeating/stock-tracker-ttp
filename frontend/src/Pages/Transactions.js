@@ -30,7 +30,7 @@ const Transactions = () => {
     </>
   );
 
-  const rightColumn = null;
+  // const rightColumn = null;
 
   return <div className="row">
           <div className="column">{ leftColumn }</div>

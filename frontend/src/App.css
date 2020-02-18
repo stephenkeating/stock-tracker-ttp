@@ -22,10 +22,10 @@ body {
   font-family: 'Cabin', sans-serif;
 }
 
-html {
-  /* background-image: linear-gradient(#F0E7D8, #E0E2DB);
-  background-attachment: fixed; */
-}
+/* html {
+  background-image: linear-gradient(#F0E7D8, #E0E2DB);
+  background-attachment: fixed;
+} */
 
 a {
   text-decoration: none;
@@ -94,18 +94,13 @@ input[type=text], input[type=number], input[type=password] {
   justify-content: center;
 }
 
-/* .column {
-  flex: 50%;
-  padding: 10px;
-} */
-
 .column {
   flex: 50% 1;
   margin: 40px;
   border: black;
   border-style: solid;
   padding: 20px;
-  max-width: 50%;
+  max-width: 400px;
   align-items: center;
   text-align: center;
 }
@@ -116,7 +111,7 @@ input[type=text], input[type=number], input[type=password] {
   border: black;
   border-style: solid;
   padding: 20px;
-  max-width: 50%;
+  max-width: 400px;
   align-items: center;
   text-align: center;
 }

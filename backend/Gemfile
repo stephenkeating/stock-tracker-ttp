@@ -42,3 +42,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # JWT for auth
 gem 'jwt'
+
+# for hiding secret
+gem 'figaro' 

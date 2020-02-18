@@ -21,18 +21,18 @@ const Nav = () => {
         </a> 
       </div>
       <div className='nav-links-div'>
-        <Link class='nav-link' to="/">HOME</Link>
+        <Link className='nav-link' to="/">HOME</Link>
         { name  
           ? <> 
-              <Link class='nav-link' to="/transactions">TRANSACTIONS</Link>
+              <Link className='nav-link' to="/transactions">TRANSACTIONS</Link>
               {/* <Link to="/portfolio">Portfolio</Link> */}
             </>
           : <> 
-              <Link class='nav-link' to="/signup">SIGNUP</Link>
-              <Link class='nav-link' to="/login">LOGIN</Link>
+              <Link className='nav-link' to="/signup">SIGNUP</Link>
+              <Link className='nav-link' to="/login">LOGIN</Link>
             </>
         }
-        <Link class='nav-link' to="/" onClick={handleLogout}>
+        <Link className='nav-link' to="/" onClick={handleLogout}>
           LOGOUT
         </Link>
       </div>

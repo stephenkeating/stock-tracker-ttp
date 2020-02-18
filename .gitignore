@@ -22,4 +22,7 @@
 /config/master.key
 
 # api keys
-/frontend/.env  
+/frontend/.env 
+
+# JWT encode secret
+/backend/config/application.yml
