@@ -15,7 +15,7 @@ const Home = () => {
                                     }).reduce((a, b) => a + b, 0)
 
   const leftColumn = user.name ? (
-    <div className="column">
+    <div className="column left">
       <h1>Portfolio (${portfolioValue ? portfolioValue.toFixed(2) : 0})</h1>
       {portfolio.map((stock, i) =>
           <Stock 

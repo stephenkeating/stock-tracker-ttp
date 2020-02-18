@@ -29,8 +29,6 @@ body {
 
 a {
   text-decoration: none;
-
-  /* letter-spacing: .03em; */
 }
 
 a:visited {
@@ -50,11 +48,35 @@ input[type=submit] {
   cursor: pointer;
 }
 
+input[type=submit]:hover {
+  opacity: 80%;
+}
+
+input[type=button] {
+  background-color: var(--red);
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: medium;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+input[type=button]:hover {
+  opacity: 80%;
+}
+
 input[type=text], input[type=number], input[type=password] {
   padding: 16px 32px;
   margin: 4px 2px;
   font-weight: bold;
   font-size: medium;
+}
+
+input:read-only {
+  background-color: var(--green);
 }
 
 .nav-bar {
@@ -68,8 +90,6 @@ input[type=text], input[type=number], input[type=password] {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* margin-right: .5em;
-  margin-left: 1.5em;  */
 }
 
 .nav-link {
@@ -90,7 +110,6 @@ input[type=text], input[type=number], input[type=password] {
 
 .row {
   display: flex;
-  /* align-items: center; */
   justify-content: center;
 }
 
@@ -122,4 +141,8 @@ input[type=text], input[type=number], input[type=password] {
 
 .green {
   color: var(--green);
+}
+
+.left {
+  height: 100%
 }

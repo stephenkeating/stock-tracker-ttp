@@ -69,6 +69,9 @@ const PurchaseForm = props => {
   const handleQuantityChange = e =>
     setQuoteForm({ ...quoteForm, [e.target.name]: Math.round(e.target.value), showQuote: false });
 
+  const handleCancel = () =>
+    setQuoteForm({ ticker: '', quantity: 0, price: 0, showQuote: false })
+
   // Destructuring keys from local state to use in the form
   const { ticker, quantity, showQuote, price } = quoteForm;
 
@@ -94,7 +97,9 @@ const PurchaseForm = props => {
       </form>
       { showQuote
         ? <form onSubmit={handleBuyShares}>
+            <br></br>
             Price:
+            <br></br>
             <input
               type="number"
               name="quotePrice"
@@ -102,6 +107,8 @@ const PurchaseForm = props => {
               value={(price * quantity).toFixed(2)}
             />
             <input type="submit" value='Buy Shares'/>
+            <br></br>
+            <input type="button" value='Cancel' onClick={handleCancel}/>
           </form>
         : null
       }
