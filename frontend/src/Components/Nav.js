@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import userActions from '../redux/actions';
 import { useSelector } from 'react-redux';
+import stockLogo from '../stockLogo.png'; 
 
 const Nav = () => {
   const dispatch = useDispatch();
@@ -13,21 +14,28 @@ const Nav = () => {
   const name = useSelector(state => state.user.name);
   
   return (
-    <nav style={{ display: 'flex', justifyContent: 'space-evenly' }}>
-      <Link to="/">Home</Link>
-      { name  
-        ? <> 
-            <Link to="/transactions">Transactions</Link>
-            {/* <Link to="/portfolio">Portfolio</Link> */}
-          </>
-        : <> 
-            <Link to="/signup">Signup</Link>
-            <Link to="/login">Login</Link>
-          </>
-      }
-      <Link to="/" onClick={handleLogout}>
-        Logout
-      </Link>
+    <nav className='nav-bar'>
+      <div className='logo-div'>
+        <a href='https://github.com/stephenkeating'>
+          <img className='logo-img' src={stockLogo} alt="Stock Tracker TTP"/>
+        </a> 
+      </div>
+      <div className='nav-links-div'>
+        <Link class='nav-link' to="/">HOME</Link>
+        { name  
+          ? <> 
+              <Link class='nav-link' to="/transactions">TRANSACTIONS</Link>
+              {/* <Link to="/portfolio">Portfolio</Link> */}
+            </>
+          : <> 
+              <Link class='nav-link' to="/signup">SIGNUP</Link>
+              <Link class='nav-link' to="/login">LOGIN</Link>
+            </>
+        }
+        <Link class='nav-link' to="/" onClick={handleLogout}>
+          LOGOUT
+        </Link>
+      </div>
     </nav>
   );
 };

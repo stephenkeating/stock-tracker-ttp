@@ -11,7 +11,7 @@ const Home = () => {
   const portfolioValue = useSelector(state => parseFloat(state.portfolioValue).toFixed(2));
 
   const leftColumn = user.name ? (
-    <>
+    <div className="column">
       <h1>Portfolio (${portfolioValue})</h1>
       {portfolio.map((stock, i) =>
           <Stock 
@@ -19,23 +19,32 @@ const Home = () => {
             ticker={stock[0]}
             quantity={stock[1].quantity}
           />)}
-    </>
+    </div>
   ) : (
     null
   );
 
   const rightColumn = user.name ? (
-      <>
+      <div className="column">
         <h3>Cash: ${balance}</h3>
         <PurchaseForm />
-      </>
+      </div>
     ) : (
-      <h1>Please Signup or Login.</h1>
+      null
+    );
+
+  const noUser = user.name ? (
+      null
+    ) : (
+      <div className="auth-box">
+        <h1>Please Signup or Login.</h1>
+      </div>
     );
 
   return <div className="row">
-          <div className="column">{ leftColumn }</div>
-          <div className="column">{ rightColumn }</div>
+          { leftColumn }
+          { rightColumn }
+          { noUser }
         </div>
 };
 

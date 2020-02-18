@@ -1,16 +1,130 @@
-.row {
-  display: flex;
+/* 
+  Green: #20BF55
+  Red: #FC5130
+  Blue: #01BAEF
+ */
+
+:root {  
+  --green: #20BF55;  
+  --red: #FC5130;  
+  --blue: #01BAEF;  
+  /* to access variable, e.g.:
+      color: var(--green);
+  */
 }
 
-.column {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Cabin', sans-serif;
+}
+
+html {
+  /* background-image: linear-gradient(#F0E7D8, #E0E2DB);
+  background-attachment: fixed; */
+}
+
+a {
+  text-decoration: none;
+
+  /* letter-spacing: .03em; */
+}
+
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+input[type=submit] {
+  background-color: var(--blue);
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: medium;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+input[type=text], input[type=number], input[type=password] {
+  padding: 16px 32px;
+  margin: 4px 2px;
+  font-weight: bold;
+  font-size: medium;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  background: var(--green);
+  vertical-align: middle;
+}
+
+.nav-links-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-right: .5em;
+  margin-left: 1.5em;  */
+}
+
+.nav-link {
+  margin-right: 1em;
+  font-weight: bold;
+}
+
+.logo-div {
+  text-align: center;
+  height: 40px;
+}
+
+.logo-img {
+  height: 40px;
+  margin-left: .5em;
+  vertical-align: middle;
+}
+
+.row {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+/* .column {
   flex: 50%;
   padding: 10px;
+} */
+
+.column {
+  flex: 50% 1;
+  margin: 40px;
+  border: black;
+  border-style: solid;
+  padding: 20px;
+  max-width: 50%;
+  align-items: center;
+  text-align: center;
+}
+
+.auth-box {
+  /* flex: 50% 1; */
+  margin: 40px;
+  border: black;
+  border-style: solid;
+  padding: 20px;
+  max-width: 50%;
+  align-items: center;
+  text-align: center;
 }
 
 .red {
-  color: red;
+  color: var(--red);
 }
 
 .green {
-  color: green;
+  color: var(--green);
 }

@@ -34,7 +34,7 @@ const Transactions = () => {
 
   return <div className="row">
           <div className="column">{ leftColumn }</div>
-          <div className="column">{ rightColumn }</div>
+          {/* <div className="column">{ rightColumn }</div> */}
         </div>
 };
 
