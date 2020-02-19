@@ -5,4 +5,7 @@
   # This is where we will look for package.json/.nvmrc/etc.
   base = "frontend"
 
+
+# for React Router
+[[redirects]]
   /*    /index.html   200
