@@ -16,16 +16,14 @@ const Nav = () => {
   return (
     <nav className='nav-bar'>
       <div className='logo-div'>
-        <a href='https://github.com/stephenkeating'>
-          <img className='logo-img' src={stockLogo} alt="Stock Tracker TTP"/>
-        </a> 
+        <Link className='nav-link' to="/"><img className='logo-img' src={stockLogo} alt="Stock Tracker TTP"/></Link>
       </div>
       <div className='nav-links-div'>
         <Link className='nav-link' to="/">HOME</Link>
         { name  
           ? <> 
+              <Link className='nav-link' to="/portfolio">PORTFOLIO</Link>
               <Link className='nav-link' to="/transactions">TRANSACTIONS</Link>
-              {/* <Link to="/portfolio">Portfolio</Link> */}
             </>
           : <> 
               <Link className='nav-link' to="/signup">SIGNUP</Link>

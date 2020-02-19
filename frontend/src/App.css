@@ -2,12 +2,14 @@
   Green: #20BF55
   Red: #FC5130
   Blue: #01BAEF
+  Gray: #605F5E
  */
 
 :root {  
   --green: #20BF55;  
   --red: #FC5130;  
   --blue: #01BAEF;  
+  --gray: #605F5E;  
   /* to access variable, e.g.:
       color: var(--green);
   */
@@ -29,6 +31,7 @@ body {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 a:visited {
@@ -108,6 +111,10 @@ input:read-only {
   vertical-align: middle;
 }
 
+.home-link {
+  text-decoration: underline;
+}
+
 .row {
   display: flex;
   justify-content: center;
@@ -141,6 +148,10 @@ input:read-only {
 
 .green {
   color: var(--green);
+}
+
+.gray {
+  color: var(--gray);
 }
 
 .left {

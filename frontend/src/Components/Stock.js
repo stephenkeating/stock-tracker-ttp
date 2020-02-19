@@ -40,7 +40,7 @@ const Stock = props => {
     } else if (open < latestPrice) {
       return "green"
     } else {
-      return "grey"
+      return "gray"
     }
   }
   

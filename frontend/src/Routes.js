@@ -3,6 +3,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 // allows us to route to all pages within the Pages folder
 import Pages from './Pages';
+import Portfolio from './Pages/Portfolio'
 
 const Routes = () => {
   return (
@@ -13,6 +14,7 @@ const Routes = () => {
       <Route path="/signup" component={Pages.Signup} />
       <Route path="/login" component={Pages.Login} />
       <Route path="/transactions" component={Pages.Transactions} />
+      <Route path="/portfolio" component={Portfolio} />
       <Route exact path="/" component={Pages.Home} />
     </Switch>
   );

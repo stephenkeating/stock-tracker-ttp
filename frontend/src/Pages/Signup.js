@@ -40,7 +40,7 @@ const Signup = props => {
         dispatch(userActions.setTransactionsAction(data.transactions));
         dispatch(userActions.setPortfolioAction(data.shares_map));
         localStorage.setItem('token', data.token);
-        history.push('/');
+        history.push('/portfolio');
     }
     })};
 
