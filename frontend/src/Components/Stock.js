@@ -19,8 +19,8 @@ const Stock = props => {
       .then(data => {
         // getting IEX data. if there is no open price, setting open to latestPrice
         setStock({...stock, latestPrice: data.latestPrice || 0, open: data.open || data.latestPrice})
-        // updating redux state with values from IEX
-        dispatch(userActions.setShareValue(data.symbol, data.latestPrice, data.open))
+        // updating redux state with values from IEX. Setting to 0 if API calls fails to prevent NaN values.
+        dispatch(userActions.setShareValue(data.symbol, data.latestPrice || 0, data.open || 0))
     })
   }, [props.quantity])
 
