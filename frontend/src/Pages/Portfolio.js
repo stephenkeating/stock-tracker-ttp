@@ -14,8 +14,6 @@ const Portfolio = () => {
                                       return shareObj[1]['totalValue']
                                     }).reduce((a, b) => a + b, 0)
 
-  console.log(user)
-
   const leftColumn = user.name ? (
     <div className="column left">
       <h1>Portfolio (${portfolioValue ? portfolioValue.toFixed(2) : 0})</h1>
