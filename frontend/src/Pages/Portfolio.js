@@ -11,7 +11,7 @@ const Portfolio = () => {
   
   // Iterating over portfolio to get total portfolio value
   let portfolioValue = portfolio.map( shareObj => {
-                                      return shareObj[1]['totalValue']
+                                      return shareObj[1]['totalValue'] ? shareObj[1]['totalValue'] : 0
                                     }).reduce((a, b) => a + b, 0)
 
   const leftColumn = user.name ? (
