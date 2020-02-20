@@ -16,11 +16,15 @@ const Stock = props => {
   // useEffect acts like componentDidMount for Hooks
   useEffect(() => {
     userActions.getQuote(ticker)
-      .then(data => {
-        // getting IEX data. if there is no open price, setting open to latestPrice
-        setStock({...stock, latestPrice: data.latestPrice || 0, open: data.open || data.latestPrice})
-        // updating redux state with values from IEX. Setting to 0 if API calls fails to prevent NaN values.
-        dispatch(userActions.setShareValue(data.symbol, data.latestPrice || 0, data.open || 0))
+    .then(data => {
+      // getting IEX data. if there is no open price, setting open to latestPrice
+      setStock({...stock, latestPrice: data.latestPrice || 0, open: data.open || data.latestPrice})
+      // updating redux state with values from IEX. Setting to 0 if API calls fails to prevent NaN values.
+      dispatch(userActions.setShareValue(data.symbol, data.latestPrice || 0, data.open || 0))
+    })
+    // if fetch fails, set share value in state to 0 to allow total Portfolio value to be calculated
+    .catch(error => {
+      dispatch(userActions.setShareValue(ticker, 0, 0))
     })
   }, [props.quantity])
 
