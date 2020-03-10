@@ -170,7 +170,8 @@ const newTransactionToDB = transactionObj => {
   const config = {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      Authorization: `bearer ` + localStorage.token
     },
     body: JSON.stringify(transactionObj)
   };

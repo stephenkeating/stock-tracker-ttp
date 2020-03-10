@@ -9,7 +9,7 @@ const Portfolio = () => {
   const balance = useSelector(state => parseFloat(state.user.balance).toFixed(2));
   const portfolio = useSelector(state => Object.entries(state.portfolio));
   
-  // Iterating over portfolio to get total portfolio value
+  // Iterating over portfolio to get total portfolio value. Ternary in map return accounts for cases where API failed to set share value.
   let portfolioValue = portfolio.map( shareObj => {
                                       return shareObj[1]['totalValue'] ? shareObj[1]['totalValue'] : 0
                                     }).reduce((a, b) => a + b, 0)
