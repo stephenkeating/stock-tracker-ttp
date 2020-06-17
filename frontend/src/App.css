@@ -1,15 +1,9 @@
-/* 
-  Green: #20BF55
-  Red: #FC5130
-  Blue: #01BAEF
-  Gray: #605F5E
- */
-
 :root {  
   --green: #20BF55;  
   --red: #FC5130;  
   --blue: #01BAEF;  
   --gray: #605F5E;  
+  
   /* to access variable, e.g.:
       color: var(--green);
   */
@@ -23,11 +17,6 @@
 body {
   font-family: 'Cabin', sans-serif;
 }
-
-/* html {
-  background-image: linear-gradient(#F0E7D8, #E0E2DB);
-  background-attachment: fixed;
-} */
 
 a {
   text-decoration: none;
@@ -115,6 +104,11 @@ input:read-only {
   text-decoration: underline;
 }
 
+h1 {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
 .row {
   display: flex;
   justify-content: center;
@@ -132,7 +126,6 @@ input:read-only {
 }
 
 .auth-box {
-  /* flex: 50% 1; */
   margin: 40px;
   border: black;
   border-style: solid;

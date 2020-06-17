@@ -11,6 +11,7 @@ const Nav = () => {
     dispatch(userActions.logoutUser());
   };
 
+  // Get user from redux
   const name = useSelector(state => state.user.name);
   
   return (
